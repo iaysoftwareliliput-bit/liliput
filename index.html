@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILIPUT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="lili2.jpg">
+
+</head>
+<body>
+    <!-- PANTALLA DE CARGA CON LOGO GIRATORIO -->
+    <div id="pantalla-carga" class="pantalla-carga">
+        <div class="logo-carga-circulo">
+            <img src="lili.png" alt="Logo Liliput" class="logo-giratorio">
+        </div>
+        <div class="texto-carga">Cargando....</div>
+    </div>
+
+    <!-- PANTALLA DE BIENVENIDA CON VIDEO -->
+    <div id="splash-screen" class="splash-screen-video">
+        <div class="contenedor-video">
+            <!-- VIDEO MP4 -->
+            <video id="video-bienvenida" autoplay muted playsinline>
+                <source src="1003_V2.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            
+            <!-- BURBUJA DE BIENVENIDA -->
+            <div class="burbuja-bienvenida">
+                BIENVENIDOS A LILIPUT
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-content" id="mainContent">
+        <!-- Fondo con Imagen1.png y efecto parallax -->
+        <div class="parallax-bg" id="parallaxBg"></div>
+        <div class="parallax-overlay" id="parallaxOverlay"></div>
+
+        <nav class="navbar">
+            <div class="logo">
+                <img src="lili.png" alt="Liliput" class="logo-circular">
+            </div>
+            <div class="nav-links">
+    <a href="#inicio">INICIO</a>
+    <a href="#sobre">AREAS</a>
+    <a href="#servicios">PROFESIONALES</a>
+    <a href="#recursos">MITOS</a>
+    <a href="#contacto">CONTACTO</a>
+</div>
+
+           <button class="btn-pastel" id="abrir-modal">AGENDAR CITA</button>
+        </nav>
+        <section id="inicio">
+        <main class="container">
+            <!-- Hero section -->
+            <section class="hero" id="inicio">
+                <div class="hero-content">
+                    <h1>AVECES LO MAS VALIENTE QUE PUEDES HACER ES PEDIR AYUDA</h1>
+                    <p> ACOMPAÑAMIENTO PSICOLÓGICO PROFESIONAL CON UN ENFOQUE CÁLIDO, HUMANO Y BASADO EN LA CIENCIA.</p>
+                    <div class="hero-buttons">
+                        
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <svg viewBox="0 0 200 200" width="220" height="220">
+                        <circle cx="100" cy="100" r="80" fill="rgba(226, 209, 255, 0.5)" stroke="#ffffff" stroke-width="3"/>
+                        <path d="M70 90 L90 110 L130 70" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <circle cx="70" cy="120" r="12" fill="#ffe0b5" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="130" cy="120" r="12" fill="#c5f0da" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M80 150 Q 100 170, 120 150" stroke="#ffffff" stroke-width="4" fill="none"/>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Servicios -->
+            <h2 class="section-title">ÁREAS DE ACOMPAÑAMIENTO</h2>
+
+<section class="cards" id="sobre">
+
+    <div class="card">
+        <div class="card-icon">🧠</div>
+        <h3>ANSIEDAD Y ESTRÉS</h3>
+        <p>Aprende herramientas prácticas para gestionar la ansiedad y reducir el estrés cotidiano.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">💬</div>
+        <h3>TERAPIA INDIVIDUAL</h3>
+        <p>Espacio seguro para explorar emociones, pensamientos y fortalecer el bienestar personal.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">💛</div>
+        <h3>AUTOESTIMA</h3>
+        <p>Fortalece tu autoconcepto y desarrolla una relación más saludable contigo mismo.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">👶</div>
+        <h3>TERAPIA INFANTIL</h3>
+        <p>Acompañamiento especializado para niños en su desarrollo emocional y conductual.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🎓</div>
+        <h3>ORIENTACIÓN VOCACIONAL</h3>
+        <p>Descubre tus habilidades e intereses para tomar decisiones académicas seguras.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🧘</div>
+        <h3>REGULACIÓN EMOCIONAL</h3>
+        <p>Desarrolla habilidades para comprender y manejar tus emociones de forma saludable.</p>
+    </div>
+
+</section>
+
+            <!-- Sobre la psicóloga -->
+            
+                <!-- Sobre el psicólogo - CON FOTO, SIN LA CARA SVG -->
+<section class="about-section" id="servicios" >
+    <div class="about-container">
+        <!-- FOTO DEL DOCTOR (lo que QUIERES mantener) -->
+        <div class="about-image">
+            <img src="dr1.jpeg" alt="LIC. EDSON GUTIÉRREZ" class="about-img">
+        </div>
+        
+        <!-- DESCRIPCIÓN DEL DOCTOR -->
+        <div class="about-content">
+            <h2>LIC. EDSON GUTIÉRREZ</h2>
+            <p class="about-subtitle">Licenciado en Psicopedagogía con enfoque Cognitivo-Conductual.L</p>
+            <p class="about-description">Especialista en acompañamiento infantil y adolescente.</p>
+
+            <div class="credenciales">
+                <span class="credencial">Psicopedagogía</span>
+            <span class="credencial">Convivencia Escolar</span>
+            <span class="credencial">Tutoría</span>
+            <span class="credencial">Enfoque Cognitivo-Conductual</span>
+            <span class="credencial">Orientación Educativa</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-section" id="servicios">
+    <div class="about-container">
+        <!-- FOTO DEL DOCTOR (lo que QUIERES mantener) -->
+        <div class="about-image">
+            <img src="dra.jpeg" alt="LIC. EDSON GUTIÉRREZ" class="about-img">
+        </div>
+        
+        <!-- DESCRIPCIÓN DE dra -->
+        <div class="about-content">
+            <h2>Lic. Ana Terán</h2>
+            <p class="about-subtitle">Licenciada en Psicopedagogía con enfoque Cognitivo-Conductual.L</p>
+            <p class="about-description">Especialista en niños y adolescentes</p>
+
+            <div class="credenciales">
+                <span class="credencial">Psicopedagogía</span>
+            <span class="credencial">Enfoque Cognitivo Conductual</span>
+            <span class="credencial">Procesos Clínicos</span>
+            <span class="credencial">Orientación Vocacional</span>
+            <span class="credencial">Acompañamiento Emocional</span>
+            </div>
+        </div>
+    </div>
+</section>
+            </section>
+
+            <!-- Testimonios -->
+            <!-- Verdades y Mitos -->
+<section class="testimonials" id="recursos">
+    <h2 class="section-title">Verdades y Mitos sobre la Psicología</h2>
+
+    <div class="testimonial-grid">
+
+        <!-- MITO -->
+        <div class="testimonial-item mito">
+            <h3 class="icono">❌ MITO</h3>
+            <p>Ir al psicólogo es solo para personas con problemas graves.</p>
+        </div>
+
+        <!-- VERDAD -->
+        <div class="testimonial-item verdad">
+            <h3 class="icono">✅ VERDAD</h3>
+            <p>La terapia ayuda a cualquier persona que quiera mejorar su bienestar emocional.</p>
+        </div>
+
+        <!-- MITO -->
+        <div class="testimonial-item mito">
+            <h3 class="icono">❌ MITO</h3>
+            <p>Los niños no necesitan terapia porque “ya se les pasará”.</p>
+        </div>
+
+        <!-- VERDAD -->
+        <div class="testimonial-item verdad">
+            <h3 class="icono">✅ VERDAD</h3>
+            <p>La atención temprana en la infancia fortalece el desarrollo emocional.</p>
+        </div>
+
+    </div>
+</section>
+
+
+            <!-- Newsletter -->
+            <!-- <section class="newsletter">-->
+             <!--   <h2> RECURSOS GRATUITOS</h2>-->
+             <!--     <p>Recibe guías y ejercicios de mindfulness.</p>-->
+    
+                    
+                
+            </section>
+<!-- SECCIÓN DE PREGUNTAS FRECUENTES -->
+<section class="faq-section" id="preguntas">
+    <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+    <p class="faq-subtitulo">Resolvemos tus dudas más comunes</p>
+    
+    <div class="faq-contenedor">
+        <!-- Pregunta 1 -->
+        <div class="faq-item">
+            <div class="faq-pregunta">
+                <span>👶 ¿Cómo sé si mi hijo necesita terapia?</span>
+                <span class="faq-icono">➕</span>
+            </div>
+            <div class="faq-respuesta">
+                <p>Algunas señales pueden ser: cambios bruscos en el comportamiento, dificultad para dormir, bajo rendimiento escolar sin causa aparente, irritabilidad constante, aislamiento o regresiones (volver a hacerse pipí, etc.). Si notas estas señales por más de 2-3 semanas, una consulta con un especialista puede ayudar a entender mejor la situación.</p>
+            </div>
+        </div>
+        
+        <!-- Pregunta 2 -->
+        <div class="faq-item">
+            <div class="faq-pregunta">
+                <span>⏱️ ¿Cuánto dura una sesión de terapia?</span>
+                <span class="faq-icono">➕</span>
+            </div>
+            <div class="faq-respuesta">
+                <p>Las sesiones tienen una duración aproximada de 45 a 50 minutos. La frecuencia recomendada es generalmente semanal, especialmente al inicio del proceso, para poder establecer un vínculo terapéutico sólido y dar continuidad al trabajo emocional.</p>
+            </div>
+        </div>
+        
+        <!-- Pregunta 3 -->
+        <div class="faq-item">
+            <div class="faq-pregunta">
+                <span>💳 ¿Aceptan seguros médicos?</span>
+                <span class="faq-icono">➕</span>
+            </div>
+            <div class="faq-respuesta">
+                <p>Actualmente trabajamos de manera particular. Aceptamos pago en efectivo, transferencia bancaria y Yape/Plin. Consulta por nuestras tarifas promocionales para pacientes frecuentes o paquetes de sesiones.</p>
+            </div>
+        </div>
+        
+        <!-- Pregunta 4 -->
+        <div class="faq-item">
+            <div class="faq-pregunta">
+                <span>💻 ¿Ofrecen sesiones online?</span>
+                <span class="faq-icono">➕</span>
+            </div>
+            <div class="faq-respuesta">
+                <p>¡Sí! Ofrecemos sesiones tanto presenciales en nuestra oficina en Piura, como online a través de videollamada para quienes viven fuera de la ciudad o prefieren la comodidad de su hogar. Ambas modalidades tienen la misma calidad profesional.</p>
+            </div>
+        </div>
+        
+        <!-- Pregunta 5 -->
+        <div class="faq-item">
+            <div class="faq-pregunta">
+                <span>🗓️ ¿Cómo puedo agendar mi primera cita?</span>
+                <span class="faq-icono">➕</span>
+            </div>
+            <div class="faq-respuesta">
+                <p>Puedes agendar de tres formas: 1) Llenando nuestro formulario de contacto (botón "AGENDAR CITA"), 2) Escribiéndonos directamente al WhatsApp 996110346, o 3) Enviándonos un mensaje por Instagram o Facebook. Te responderemos dentro de las 24 horas para coordinar día y hora.</p>
+            </div>
+        </div>
+    </div>
+</section>
+            <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+<section id="contacto">
+        <p class="copyright">
+            © 2026 LILIPUT 
+        </p>
+
+        <p class="direccion">
+            📍 CAL. SONDOR 113 MZA. B LOTE 13 INT. 201  
+            APV. CHIRA – PIURA, PIURA – PIURA  
+            (Frente al Macro Rojo)
+        </p>
+
+        <div class="social">
+            <a href="https://www.instagram.com/liliput.piura" target="_blank">
+                <img src="1.png" alt="Instagram">
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=100075938857558" target="_blank">
+                <img src="4.png" alt="Facebook">
+            </a>
+
+            <a href="https://www.tiktok.com/@liliput.piura" target="_blank">
+                <img src="3.png" alt="TikTok">
+            </a>
+
+            <a href="https://wa.me/51996110346?text=Necesito%20informacion" target="_blank">
+                <img src="2.png" alt="WhatsApp">
+            </a>
+        </div>
+</section>
+    </div>
+</footer>
+
+
+        </main>
+    </div>
+
+<!-- MODAL DEL FORMULARIO DE CONTACTO - CON FORMSUBMIT -->
+<div id="modal-contacto" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <h2 class="modal-titulo">AGENDAR CITA</h2>
+        <p class="modal-subtitulo">Déjanos tus datos y te contactaremos</p>
+        
+        <!-- FORMULARIO CON FORMSUBMIT -->
+        <form action="https://formsubmit.co/Liliput.peru@gmail.com" method="POST" class="formulario-contacto">
+            <!-- Campos ocultos de configuración -->
+            <input type="hidden" name="_subject" value="Nueva cita desde web LILIPUT">
+            <input type="hidden" name="_template" value="table">
+            
+            <!-- Campo anti-spam oculto -->
+            <input type="text" name="_honey" style="display:none">
+            
+            <div class="campo-formulario">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: María Pérez">
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" name="email" required placeholder="tucorreo@ejemplo.com">
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="telefono">Teléfono / WhatsApp *</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 996110346">
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="motivo">Motivo de consulta</label>
+                <select id="motivo" name="motivo">
+                    <option value="">Selecciona una opción</option>
+                    <option value="ansiedad">Ansiedad y Estrés</option>
+                    <option value="individual">Terapia Individual</option>
+                    <option value="autoestima">Autoestima</option>
+                    <option value="infantil">Terapia Infantil</option>
+                    <option value="vocacional">Orientación Vocacional</option>
+                    <option value="regulacion">Regulación Emocional</option>
+                </select>
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="profesional">Profesional de preferencia</label>
+                <select id="profesional" name="profesional">
+                    <option value="">Indiferente</option>
+                    <option value="edson">LIC. EDSON GUTIÉRREZ</option>
+                    <option value="ana">Lic. Ana Terán</option>
+                </select>
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="mensaje">Mensaje adicional</label>
+                <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos brevemente..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-enviar">ENVIAR SOLICITUD</button>
+        </form>
+        
+        <!-- Mensaje de éxito (ya no se usa pero lo dejamos por si acaso) -->
+        <div id="mensaje-exito" class="mensaje-exito" style="display: none;">
+            <div class="icono-exito">✅</div>
+            <h3>¡Solicitud enviada!</h3>
+            <p>Gracias por contactarnos. Te responderemos a la brevedad.</p>
+            <button class="btn-cerrar-exito">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+       // Elementos
+const pantallaCarga = document.getElementById('pantalla-carga');
+const splashScreen = document.getElementById('splash-screen');
+const video = document.getElementById('video-bienvenida');
+const mainContent = document.getElementById('mainContent');
+const burbuja = document.querySelector('.burbuja-bienvenida');
+
+// Ocultar scroll mientras carga
+document.body.style.overflow = 'hidden';
+
+// Mostrar carga por 2 segundos
+setTimeout(() => {
+    pantallaCarga.style.transition = 'opacity 0.8s ease';
+    pantallaCarga.style.opacity = '0';
+    
+    setTimeout(() => {
+        pantallaCarga.style.display = 'none';
+        splashScreen.style.display = 'flex';
+        
+        // Mostrar burbuja inmediatamente al aparecer el video
+        if (burbuja) {
+            burbuja.style.opacity = '1';
+            burbuja.style.animation = 'aparecerBurbuja 0.5s ease forwards, flotar 4s ease-in-out infinite';
+        }
+        
+        video.play().catch(e => console.log(e));
+        splashScreen.style.animation = 'aparecer 1s ease';
+    }, 800);
+}, 2000);
+
+        // Cuando termina el video
+        video.addEventListener('ended', function() {
+            splashScreen.style.transition = 'opacity 1.2s ease';
+            splashScreen.style.opacity = '0';
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+                document.body.style.overflow = 'auto';
+                mainContent.style.animation = 'aparecer 1.5s ease';
+                
+                // Inicializar parallax
+                window.dispatchEvent(new Event('scroll'));
+            }, 1200);
+        });
+
+        // Tiempo de seguridad (si el video es muy corto o hay error)
+        setTimeout(function() {
+            if (splashScreen.style.display === 'flex' && splashScreen.style.opacity !== '0') {
+                splashScreen.style.transition = 'opacity 1.2s ease';
+                splashScreen.style.opacity = '0';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                    document.body.style.overflow = 'auto';
+                }, 1200);
+            }
+        }, 10000);
+
+        // Para móviles - reproducción automática
+        document.addEventListener('touchstart', function() {
+            if (video.paused && splashScreen.style.display === 'flex') {
+                video.play();
+            }
+        }, { once: true });
+
+        // Efecto parallax
+        window.addEventListener('scroll', function() {
+            const parallaxBg = document.getElementById('parallaxBg');
+            const parallaxOverlay = document.getElementById('parallaxOverlay');
+            
+            if (parallaxBg && parallaxOverlay) {
+                const scrollPosition = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const maxScroll = documentHeight - windowHeight;
+                const scrollPercentage = maxScroll > 0 ? scrollPosition / maxScroll : 0;
+                
+                const minTranslate = -150;
+                const maxTranslate = 0;
+                const speed = 0.8;
+                let translateY = maxTranslate - (scrollPercentage * Math.abs(minTranslate) * speed);
+                translateY = Math.max(minTranslate, Math.min(maxTranslate, translateY));
+                
+                parallaxBg.style.transform = `translateY(${translateY}px)`;
+                parallaxOverlay.style.transform = `translateY(${translateY}px)`;
+            }
+        });
+
+        // ===== FORMULARIO MODAL =====
+const modal = document.getElementById('modal-contacto');
+const btnAbrir = document.getElementById('abrir-modal');
+const btnCerrar = document.querySelector('.cerrar-modal');
+
+// Abrir modal
+btnAbrir.onclick = function() {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Cerrar modal (clic en X)
+btnCerrar.onclick = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar modal (clic fuera del contenido)
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Cerrar modal con tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ===== FAQ ACORDEÓN =====
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const pregunta = item.querySelector('.faq-pregunta');
+    
+    pregunta.addEventListener('click', () => {
+        // Cerrar otros items (opcional)
+        /*
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('activo')) {
+                otherItem.classList.remove('activo');
+            }
+        });
+        */
+        
+        // Abrir/cerrar el actual
+        item.classList.toggle('activo');
+        
+        // Cambiar el ícono
+        const icono = item.querySelector('.faq-icono');
+        if (item.classList.contains('activo')) {
+            icono.textContent = '✕';
+        } else {
+            icono.textContent = '➕';
+        }
+    });
+});
+    </script>
+</body>
+</html>
