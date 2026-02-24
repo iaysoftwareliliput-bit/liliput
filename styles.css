@@ -24,7 +24,7 @@
 
 .when-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -692,7 +692,7 @@ body {
 /* Cards */
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
     margin: 2rem 0 4rem;
 }
@@ -836,7 +836,7 @@ body {
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -1034,322 +1034,463 @@ body {
     50% { transform: translateX(-50%) translateY(-8px); }
 }
 
-/* ===== VERSIÓN MÓVIL - MISMA ESTRUCTURA QUE PC ===== */
+/* ===== RESPONSIVE MEJORADO - VERSIÓN PROPORCIONAL ===== */
 @media screen and (max-width: 768px) {
     
-    /* === TODO SE ESCALA PROPORCIONALMENTE PERO MANTIENE LA MISMA ESTRUCTURA === */
-    html {
-        font-size: 1.8vw; /* Reduce todo proporcionalmente */
-    }
-    
+    /* === ESCALADO PROPORCIONAL GENERAL === */
     body {
-        font-size: 1rem;
+        font-size: 3.8vw;
         overflow-x: hidden;
     }
     
     .container {
-        width: 95%;
-        padding: 0;
+        width: 94%;
+        padding: 3% 2%;
         margin: 0 auto;
     }
     
-    /* === NAVBAR - MANTIENE LA MISMA ESTRUCTURA === */
+    /* === NAVBAR PROPORCIONAL === */
     .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        margin: 1rem auto;
         width: 98%;
-        flex-direction: row; /* MISMA ESTRUCTURA */
+        margin: 2% auto;
+        padding: 3%;
+        border-radius: 40px;
+        flex-direction: column;
+        gap: 2%;
     }
     
     .logo-circular {
-        width: 6rem;
-        height: 6rem;
+        width: 18%;
+        height: auto;
+        min-width: 60px;
+        max-width: 100px;
     }
     
     .nav-links {
-        display: flex;
-        gap: 0.8rem;
-        flex-wrap: wrap;
+        width: 100%;
+        gap: 1.5%;
         justify-content: center;
+        flex-wrap: wrap;
     }
     
     .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.2rem 0.4rem;
+        font-size: 3.2vw;
+        padding: 1% 2%;
+        white-space: nowrap;
     }
     
     .btn-pastel {
-        font-size: 0.9rem;
-        padding: 0.4rem 1rem;
+        font-size: 3.5vw;
+        padding: 2% 5%;
+        width: auto;
+        margin: 1% auto;
     }
     
-    /* === HERO - MANTIENE LA MISMA ESTRUCTURA === */
+    /* === HERO PROPORCIONAL === */
     .hero {
-        display: flex;
-        flex-direction: row; /* MISMA ESTRUCTURA */
-        align-items: center;
-        gap: 1rem;
-        padding: 1.5rem;
-        margin: 1rem 0;
+        flex-direction: column;
+        text-align: center;
+        padding: 5%;
+        gap: 4%;
+        margin: 3% 0;
+        border-radius: 40px;
     }
     
     .hero-content {
-        flex: 1;
+        width: 100%;
+        flex: none;
     }
     
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 6.5vw;
+        line-height: 1.2;
+        margin-bottom: 3%;
     }
     
     .hero-content p {
-        font-size: 0.9rem;
+        font-size: 4vw;
+        width: 100%;
         max-width: 100%;
     }
     
     .hero-image svg {
-        width: 120px;
-        height: 120px;
+        width: 50%;
+        height: auto;
+        max-width: 180px;
     }
     
-    /* === TÍTULOS === */
+    /* === TÍTULOS PROPORCIONALES === */
     .section-title {
-        font-size: 2rem;
-        margin: 2rem 0 1rem;
+        font-size: 6.5vw;
+        margin: 6% 0 3%;
     }
     
-    /* === CARDS - MANTIENE 3 COLUMNAS === */
+    .section-title:after {
+        width: 20%;
+        height: 3px;
+    }
+    
+    /* === CARDS PROPORCIONALES === */
     .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* MISMA ESTRUCTURA */
-        gap: 0.8rem;
-        margin: 1rem 0;
+        grid-template-columns: 1fr;
+        gap: 3%;
+        margin: 3% 0 5%;
     }
     
     .card {
-        padding: 1rem;
+        width: 100%;
+        padding: 5%;
+        border-radius: 30px;
+        margin: 0;
     }
     
     .card-icon {
-        width: 3rem;
-        height: 3rem;
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        width: 18%;
+        height: auto;
+        aspect-ratio: 1/1;
+        font-size: 8vw;
+        border-radius: 20px;
+        margin-bottom: 3%;
     }
     
     .card h3 {
-        font-size: 0.9rem;
+        font-size: 5vw;
+        margin-bottom: 2%;
     }
     
     .card p {
-        font-size: 0.7rem;
+        font-size: 3.8vw;
+        line-height: 1.4;
     }
     
-    /* === SECCIÓN ¿CUÁNDO LLEVAR? - MANTIENE 3 COLUMNAS === */
+    /* === SECCIÓN ¿CUÁNDO LLEVAR? PROPORCIONAL === */
     .when-to-go {
-        padding: 1.5rem;
-        margin: 2rem 0;
+        padding: 5%;
+        border-radius: 40px;
+        margin: 5% 0;
     }
     
     .section-subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
+        font-size: 4vw;
+        margin-bottom: 4%;
+        margin-top: -1%;
+        padding: 0 2%;
     }
     
     .when-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* MISMA ESTRUCTURA */
-        gap: 0.8rem;
+        grid-template-columns: 1fr;
+        gap: 3%;
+        margin: 2% 0;
     }
     
     .when-item {
-        padding: 1rem;
+        padding: 4%;
+        border-radius: 30px;
     }
     
     .when-item h3 {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.3rem;
+        font-size: 5vw;
+        margin-bottom: 3%;
+        padding-bottom: 2%;
+    }
+    
+    .when-item h3::after {
+        width: 15%;
+        height: 2px;
     }
     
     .when-item ul li {
-        font-size: 0.7rem;
-        padding-left: 0.8rem;
-        margin-bottom: 0.3rem;
+        font-size: 3.8vw;
+        padding-left: 5%;
+        margin-bottom: 2%;
     }
     
     .when-item ul li::before {
-        font-size: 0.9rem;
-        top: -0.1rem;
+        font-size: 5vw;
+        top: -0.5vw;
     }
     
-    /* === PROFESIONALES - MANTIENE MISMA ESTRUCTURA === */
+    /* === SECCIÓN PROFESIONALES PROPORCIONAL === */
     .about-section {
-        padding: 1.5rem;
-        margin: 2rem 0;
+        padding: 5%;
+        border-radius: 40px;
+        margin: 5% 0;
     }
     
     .about-container {
-        gap: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 4%;
     }
     
     .about-img {
-        max-width: 150px;
+        width: 60%;
+        max-width: 200px;
     }
     
     .about-content h2 {
-        font-size: 1.5rem;
+        font-size: 5.5vw;
     }
     
     .about-subtitle {
-        font-size: 0.8rem;
+        font-size: 4vw;
+        margin-bottom: 2%;
     }
     
     .about-description {
-        font-size: 0.8rem;
-        padding: 0.8rem;
-        margin-bottom: 1rem;
+        font-size: 3.8vw;
+        padding: 3%;
+        border-radius: 20px;
+        margin-bottom: 3%;
+    }
+    
+    .credenciales {
+        justify-content: center;
+        gap: 2%;
+        margin-top: 2%;
     }
     
     .credencial {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.8rem;
+        font-size: 3.5vw;
+        padding: 1.5% 4%;
+        border-radius: 30px;
     }
     
-    /* === MITOS - MANTIENE 2 COLUMNAS === */
+    /* === SECCIÓN MITOS PROPORCIONAL === */
     .testimonials {
-        padding: 1.5rem;
+        padding: 5%;
+        border-radius: 40px;
+        margin: 5% 0;
     }
     
     .testimonial-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* MISMA ESTRUCTURA */
-        gap: 0.8rem;
+        grid-template-columns: 1fr;
+        gap: 3%;
+        margin-top: 2%;
     }
     
     .testimonial-item {
-        padding: 1rem;
+        padding: 4%;
+        border-radius: 25px;
     }
     
     .testimonial-item p {
-        font-size: 0.8rem;
+        font-size: 4vw;
+        margin-bottom: 2%;
     }
     
-    /* === FAQ - MANTIENE MISMA ESTRUCTURA === */
+    /* === FAQ PROPORCIONAL === */
     .faq-section {
-        padding: 1.5rem;
-        margin: 2rem 0;
+        padding: 5%;
+        border-radius: 40px;
+        margin: 5% 0;
     }
     
     .faq-subtitulo {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
+        font-size: 4vw;
+        margin-bottom: 4%;
+    }
+    
+    .faq-contenedor {
+        gap: 2%;
     }
     
     .faq-pregunta {
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
+        padding: 3% 4%;
+        font-size: 4vw;
+    }
+    
+    .faq-icono {
+        font-size: 5vw;
     }
     
     .faq-respuesta p {
-        font-size: 0.8rem;
+        font-size: 3.8vw;
     }
     
-    /* === FOOTER - MANTIENE MISMA ESTRUCTURA === */
+    .faq-item.activo .faq-respuesta {
+        padding: 0 4% 4% 4%;
+    }
+    
+    /* === FOOTER PROPORCIONAL === */
     .footer {
-        margin-top: 2rem;
-        padding: 1rem 0;
+        margin-top: 5%;
+        padding: 3% 0;
     }
     
     .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row; /* MISMA ESTRUCTURA */
-        padding: 0 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 2%;
+        padding: 0 3%;
     }
     
     .social {
-        gap: 1rem;
+        gap: 4%;
+        justify-content: center;
+        margin-top: 2%;
     }
     
     .social a img {
-        width: 2rem;
-        height: 2rem;
+        width: 12vw;
+        height: auto;
+        max-width: 45px;
     }
     
-    /* === MODAL === */
+    /* === MODAL PROPORCIONAL === */
     .modal-contenido {
-        padding: 1.5rem;
+        width: 94%;
+        padding: 4%;
+        margin: 2% auto;
+        border-radius: 30px;
     }
     
     .modal-titulo {
-        font-size: 1.5rem;
+        font-size: 6vw;
+        margin-bottom: 1%;
+    }
+    
+    .modal-subtitulo {
+        font-size: 4vw;
+        margin-bottom: 3%;
+    }
+    
+    .campo-formulario label {
+        font-size: 3.8vw;
+        margin-left: 2%;
     }
     
     .campo-formulario input,
     .campo-formulario select,
     .campo-formulario textarea {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        padding: 3%;
+        font-size: 3.8vw;
+        border-radius: 30px;
     }
     
-    /* === PANTALLA DE CARGA === */
+    .btn-enviar {
+        padding: 3%;
+        font-size: 4.5vw;
+        border-radius: 40px;
+        margin-top: 2%;
+    }
+    
+    /* === PANTALLA DE CARGA PROPORCIONAL === */
     .logo-carga-circulo {
-        width: 5rem;
-        height: 5rem;
+        width: 25vw;
+        height: 25vw;
+        max-width: 100px;
+        max-height: 100px;
     }
     
     .logo-giratorio {
-        width: 3rem;
-        height: 3rem;
+        width: 16vw;
+        height: 16vw;
+        max-width: 65px;
+        max-height: 65px;
     }
     
+    .texto-carga {
+        font-size: 4vw;
+        margin-top: 3%;
+    }
+    
+    /* === BURBUJA DE BIENVENIDA PROPORCIONAL === */
     .burbuja-bienvenida {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-    }
-}
-
-/* === MÓVILES MUY PEQUEÑOS - AJUSTE FINO === */
-@media screen and (max-width: 480px) {
-    html {
-        font-size: 1.5vw;
+        font-size: 4.5vw;
+        padding: 2% 5%;
+        width: 90%;
+        white-space: normal;
+        top: 5%;
     }
     
-    .nav-links {
-        gap: 0.3rem;
+    .burbuja-bienvenida::after {
+        bottom: -10px;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid rgba(255, 255, 255, 0.95);
     }
     
-    .nav-links a {
-        font-size: 0.7rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 1.3rem;
-    }
-    
-    .hero-image svg {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .card h3 {
-        font-size: 0.7rem;
-    }
-    
-    .when-item h3 {
-        font-size: 0.7rem;
-    }
-}
-
-/* === DESACTIVAR PARALLAX EN MÓVIL === */
-@media screen and (max-width: 768px) {
+    /* === DESACTIVAR PARALLAX EN MÓVIL === */
     .parallax-bg,
     .parallax-overlay {
         background-attachment: scroll;
         transform: none !important;
+    }
+}
+
+/* === MÓVILES MUY PEQUEÑOS === */
+@media screen and (max-width: 380px) {
+    body {
+        font-size: 4vw;
+    }
+    
+    .nav-links a {
+        font-size: 3.5vw;
+    }
+    
+    .btn-pastel {
+        font-size: 3.8vw;
+    }
+    
+    .hero-content h1 {
+        font-size: 7vw;
+    }
+    
+    .hero-content p {
+        font-size: 4.5vw;
+    }
+    
+    .card h3 {
+        font-size: 5.5vw;
+    }
+    
+    .about-content h2 {
+        font-size: 6vw;
+    }
+}
+
+/* === TABLETS === */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 3%;
+    }
+    
+    .navbar {
+        padding: 1.5%;
+        margin: 2%;
+    }
+    
+    .nav-links a {
+        font-size: 1.8vw;
+    }
+    
+    .hero-content h1 {
+        font-size: 4.5vw;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .when-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* === MEJORA PARA TACTIL === */
+@media (hover: none) and (pointer: coarse) {
+    .btn-pastel:active,
+    .nav-links a:active,
+    .card:active,
+    .when-item:active,
+    .faq-pregunta:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+        transition: all 0.1s ease;
     }
 }
