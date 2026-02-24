@@ -1,3 +1,184 @@
+/* ===== SECCIÓN: ¿CUÁNDO LLEVAR A MI HIJO/A AL PSICÓLOGO/A? ===== */
+.when-to-go {
+    background: rgba(250, 242, 255, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 70px;
+    padding: 3rem;
+    margin: 4rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.when-to-go .section-title {
+    margin-top: 0;
+    color: #2d3a4c;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #6b5e8a;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+    font-weight: 500;
+}
+
+.when-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.when-item {
+    background: rgba(255, 245, 250, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 2rem 1.8rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 25px 40px -20px rgba(140, 120, 160, 0.4);
+    transition: 0.25s ease;
+}
+
+.when-item:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 240, 248, 0.8);
+    box-shadow: 0 30px 50px -20px rgba(120, 100, 140, 0.5);
+}
+
+.when-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #3e4360;
+    text-transform: uppercase;
+    border-bottom: 3px solid rgba(226, 209, 255, 0.5);
+    padding-bottom: 0.8rem;
+    position: relative;
+}
+
+.when-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e2d1ff, #c5f0da);
+    border-radius: 3px;
+}
+
+.when-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.when-item ul li {
+    color: #3e5062;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.when-item ul li::before {
+    content: '•';
+    color: #b19fcf;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: -0.3rem;
+}
+
+/* Versión con iconos alternativos (opcional - descomentar si prefieres checkmarks) */
+/*
+.when-item ul li::before {
+    content: '✓';
+    color: #9fc5b0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    left: 0;
+    top: 0;
+}
+*/
+
+/* Responsive para la sección */
+@media (max-width: 768px) {
+    .when-to-go {
+        padding: 2rem 1.5rem;
+        border-radius: 50px;
+    }
+    
+    .when-item h3 {
+        font-size: 1.5rem;
+    }
+    
+    .when-item ul li {
+        font-size: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .when-to-go {
+        padding: 1.5rem 1rem;
+        border-radius: 40px;
+    }
+    
+    .when-grid {
+        gap: 1.2rem;
+    }
+    
+    .when-item {
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .when-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .when-item ul li {
+        font-size: 0.95rem;
+        padding-left: 1.5rem;
+        margin-bottom: 0.6rem;
+    }
+}
+
+/* Estilos adicionales para mejorar la consistencia con las cards de servicios */
+.when-item:nth-child(odd) {
+    background: rgba(255, 245, 250, 0.7);
+}
+
+.when-item:nth-child(even) {
+    background: rgba(240, 248, 255, 0.7);
+}
+
+/* Efecto de brillo sutil en hover */
+.when-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.when-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.when-item:hover::after {
+    opacity: 1;
+}
 /* Reset y estilos generales */
 * {
     margin: 0;
@@ -422,8 +603,8 @@ body {
 }
 
 .logo-circular {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid white;
@@ -783,8 +964,8 @@ body {
 }
 
 .social a img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     transition: transform 0.2s ease;
 }
