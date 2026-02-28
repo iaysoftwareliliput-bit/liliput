@@ -1073,6 +1073,44 @@ body {
     opacity: 1;
 }
 
+/* Estilos para Compartir en Redes Sociales */
+.footer-redes-compartir h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-redes-compartir .social-compartir {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    justify-content: flex-start;
+}
+
+.footer-redes-compartir .btn-compartir {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.85;
+}
+
+.footer-redes-compartir .btn-compartir img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.footer-redes-compartir .btn-compartir:hover img {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
+}
+
+.footer-redes-compartir .btn-compartir:active {
+    transform: scale(0.95);
+}
+
 .direccion-destacada {
     background: rgba(255, 255, 255, 0.25);
     padding: 1.2rem;
