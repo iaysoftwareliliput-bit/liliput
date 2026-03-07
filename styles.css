@@ -540,8 +540,8 @@ body {
 }
 
 .logo-circular {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
    
@@ -1421,7 +1421,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: white;
+    background: rgb(251, 251, 251);
     z-index: 9999;
     display: none;
     justify-content: center;
@@ -2629,4 +2629,502 @@ body {
     transform: translateY(-8px);
     background: rgba(255, 240, 248, 0.8);
     box-shadow: 0 30px 50px -20px rgba(120, 100, 140, 0.5);
+}
+/* ===== DROPDOWN MULTISELECT (ESTILO PASTEL) ===== */
+.dropdown-checkbox {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.2rem;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-button {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+    border: 2px solid rgba(226, 209, 255, 0.5);
+    border-radius: 40px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #2d3a4c;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    line-height: 1.4;
+    position: relative;
+}
+
+/* Flecha personalizada (como la de los select nativos) */
+.dropdown-button::after {
+    content: "▼";
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #b19fcf;
+    pointer-events: none;
+    transition: transform 0.2s;
+}
+
+/* Efecto focus igual que los inputs */
+.dropdown-button:focus {
+    outline: none;
+    border-color: #e2d1ff;
+    box-shadow: 0 0 0 4px rgba(226, 209, 255, 0.3);
+    background: white;
+}
+
+/* Panel desplegable con las opciones */
+.dropdown-opciones {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: rgba(255, 245, 250, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(140, 120, 160, 0.3);
+    padding: 0.5rem 0;
+}
+
+.dropdown-opciones.mostrar {
+    display: block;
+}
+
+/* Cada ítem del checkbox */
+.checkbox-item {
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid rgba(226, 209, 255, 0.3);
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-item:hover {
+    background: rgba(226, 209, 255, 0.3);
+}
+
+.checkbox-item:last-child {
+    border-bottom: none;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 1rem;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #b19fcf; /* Color pastel para el check */
+}
+
+.checkbox-item label {
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+    font-size: 1rem;
+    color: #4a3f63;
+    font-weight: normal;
+}
+
+/* Asegura que no desborde el modal */
+.modal-contenido .dropdown-checkbox {
+    max-width: 100%;
+}
+/* ===== SECCIÓN PROCESO DE ACOMPAÑAMIENTO ===== */
+.proceso-section {
+    background: rgba(250, 242, 255, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 70px;
+    padding: 3rem;
+    margin: 4rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.proceso-subtitulo {
+    text-align: center;
+    color: #6b5e8a;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+    font-weight: 500;
+}
+
+.proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.proceso-card {
+    background: rgba(255, 245, 250, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 2rem 1.8rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 25px 40px -20px rgba(140, 120, 160, 0.4);
+    transition: 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.proceso-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 240, 248, 0.8);
+    box-shadow: 0 30px 50px -20px rgba(120, 100, 140, 0.5);
+}
+
+.proceso-icono {
+    font-size: 3.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    width: 90px;
+    height: 90px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 2px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.proceso-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: #3e4360;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.proceso-descripcion {
+    color: #3e5062;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.proceso-detalle {
+    background: rgba(226, 209, 255, 0.3);
+    border-radius: 30px;
+    padding: 1rem;
+    margin-top: auto;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.proceso-detalle span {
+    display: block;
+    color: #4a3f63;
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.proceso-detalle span:last-child {
+    border-bottom: none;
+}
+
+.proceso-detalle span::before {
+    content: "•";
+    color: #b19fcf;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.proceso-nota {
+    text-align: center;
+    color: #5d4b68;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 60px;
+    backdrop-filter: blur(4px);
+    border: 1px solid white;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .proceso-section {
+        padding: 2rem 1.5rem;
+        border-radius: 50px;
+    }
+    
+    .proceso-subtitulo {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .proceso-card h3 {
+        font-size: 1.8rem;
+    }
+    
+    .proceso-icono {
+        width: 70px;
+        height: 70px;
+        font-size: 2.8rem;
+        border-radius: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .proceso-section {
+        padding: 1.5rem 1rem;
+        border-radius: 40px;
+    }
+    
+    .proceso-grid {
+        gap: 1.5rem;
+    }
+    
+    .proceso-card {
+        padding: 1.5rem;
+    }
+    
+    .proceso-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .proceso-descripcion {
+        font-size: 1rem;
+    }
+    
+    .proceso-detalle span {
+        font-size: 0.9rem;
+    }
+}
+/* Navbar sticky */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima */
+    /* mantén los estilos que ya tienes, solo añade position sticky y top 0 */
+}
+
+/* Estilos para el botón hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: #2f3e57; /* color de los enlaces */
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+/* Media query para móvil */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; /* justo debajo del navbar */
+        left: 0;
+        width: 100%;
+        background: rgba(255, 250, 250, 0.95);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+    }
+    
+    /* Ajustes para el botón de agendar cita en móvil */
+    .btn-pastel {
+        margin-left: auto;
+        margin-right: 0.5rem;
+    }
+}
+/* ===== SECCIÓN DE CONVENIOS ===== */
+.convenios-section {
+    background: rgba(250, 242, 255, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 70px;
+    padding: 3rem;
+    margin: 4rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.convenios-subtitulo {
+    text-align: center;
+    color: #6b5e8a;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+    font-weight: 500;
+}
+
+.convenios-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas en desktop */
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.convenio-card {
+    background: rgba(255, 245, 250, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem 1rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 25px 40px -20px rgba(140, 120, 160, 0.4);
+    transition: 0.25s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.convenio-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 240, 248, 0.8);
+    box-shadow: 0 30px 50px -20px rgba(120, 100, 140, 0.5);
+}
+
+.convenio-icon {
+    font-size: 3rem;
+    background: rgba(255, 255, 255, 0.6);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 2px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.convenio-card h3 {
+    font-size: 1.4rem;
+    color: #3e4360;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.convenio-card p {
+    color: #3e5062;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 1024px) {
+    .convenios-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .convenios-section {
+        padding: 2rem 1.5rem;
+        border-radius: 50px;
+    }
+    
+    .convenios-subtitulo {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .convenios-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+        gap: 1rem;
+    }
+    
+    .convenio-card {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .convenio-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2.2rem;
+    }
+    
+    .convenio-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .convenio-card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .convenios-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
+    }
+}
+/* ===== ESTILO PARA LOS LOGOS DE CONVENIOS ===== */
+.convenio-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Para que la imagen llene el círculo sin deformarse */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6); /* Fondo claro por si la imagen tiene transparencia */
+    border: 2px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Ajustes responsive */
+@media screen and (max-width: 768px) {
+    .convenio-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .convenio-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+/* Forzar 4 columnas en pantallas grandes (escritorio) */
+@media screen and (min-width: 1024px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
