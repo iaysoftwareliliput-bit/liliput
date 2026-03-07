@@ -24,13 +24,16 @@
             <!-- VIDEO MP4 -->
             <video id="video-bienvenida" autoplay muted playsinline>
                 <source src="100456.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
+                Tu navegador no soporta el elemento .
             </video>
             
             <!-- BURBUJA DE BIENVENIDA -->
-            <div class="burbuja-bienvenida">
-                BIENVENIDOS A LILIPUT
+            <div class="burbuja-bienvenida" id="burbuja1">
+                ¡Hola! Soy Lili
             </div>
+             <div class="burbuja-bienvenida" id="burbuja2" style="opacity: 0;">
+    hoy te voy a mostrar Liliput
+</div>
         </div>
     </div>
 
@@ -40,21 +43,25 @@
         <div class="parallax-bg" id="parallaxBg"></div>
         <div class="parallax-overlay" id="parallaxOverlay"></div>
 
-        <nav class="navbar">
-            <div class="logo">
-                <img src="lili.png" alt="Liliput" class="logo-circular">
-            </div>
-            <div class="nav-links">
-    <a href="#inicio">INICIO</a>
-    <a href="#sobre">ÁREAS</a>
-    <a href="#consejos">CONSEJOS</a>
-    <a href="#servicios">PROFESIONALES</a>
-    <a href="#recursos">MITOS</a>
-    <a href="#contacto">CONTACTO</a>
-</div>
-
-           <button class="btn-pastel" id="abrir-modal">AGENDAR CITA</button>
-        </nav>
+       <nav class="navbar">
+    <div class="logo">
+        <img src="lili.png" alt="Liliput" class="logo-circular">
+    </div>
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+        <a href="#inicio">INICIO</a>
+        <a href="#sobre">ÁREAS</a>
+        <a href="#consejos">CONSEJOS</a>
+        <a href="#servicios">PROFESIONALES</a>
+        <a href="#recursos">MITOS</a>
+        <a href="#contacto">CONTACTO</a>
+    </div>
+    <button class="btn-pastel" id="abrir-modal">AGENDAR CITA</button>
+</nav>
         <section id="inicio">
         <main class="container">
             <!-- Hero section -->
@@ -70,7 +77,48 @@
                      <img src="leon.png"  class="about-img2">
                 </div>
             </section>
+<!-- ===== SECCIÓN DE CONVENIOS EDUCATIVOS ===== -->
+<section class="convenios-section">
+    <h2 class="section-title">Instituciones que confían en nosotros</h2>
+    <p class="convenios-subtitulo">Contamos con convenios con 5 instituciones educativas</p>
 
+    <div class="convenios-grid">
+        <!-- Convenio 1 -->
+        <div class="convenio-card">
+            <img src="logos/colegio1.png" alt="Logo Colegio 1" class="convenio-logo">
+            <h3>Sócrates</h3>
+            
+        </div>
+
+        <!-- Convenio 2 -->
+        <div class="convenio-card">
+            <img src="logos/colegio2.png" alt="Logo Colegio 2" class="convenio-logo">
+            <h3>Rosa Suárez Rafael</h3>
+            
+        </div>
+
+        <!-- Convenio 3 -->
+        <div class="convenio-card">
+            <img src="logos/colegio3.png" alt="Logo Colegio 3" class="convenio-logo">
+            <h3>Saint Andrés </h3>
+        
+        </div>
+
+        <!-- Convenio 4 -->
+        <div class="convenio-card">
+            <img src="logos/colegio4.png" alt="Logo Colegio 4" class="convenio-logo">
+            <h3>José Joaquín Inclán </h3>
+           
+        </div>
+
+        <!-- Convenio 5 -->
+        <div class="convenio-card">
+            <img src="logos/colegio5.png" alt="Logo Colegio 5" class="convenio-logo">
+            <h3>Divino Rey</h3>
+            
+        </div>
+    </div>
+</section>
             <!-- Servicios -->
 <h2 class="section-title">ÁREAS DE ACOMPAÑAMIENTO</h2>
 
@@ -189,7 +237,59 @@
                     </div>
                 </div>
             </section>
+<!-- ===== SECCIÓN: PROCESO DE ACOMPAÑAMIENTO ===== -->
+<section class="proceso-section">
+    <h2 class="section-title">NUESTRO PROCESO DE ACOMPAÑAMIENTO</h2>
+    
 
+    <div class="proceso-grid">
+        <!-- Paso 1: Entrevista inicial -->
+        <div class="proceso-card">
+            <div class="proceso-icono">🗣️</div>
+            <h3>1. Entrevista inicial</h3>
+            <p class="proceso-descripcion">Conversamos con los padres y el niño para conocer la situación, las preocupaciones y los objetivos. Este primer contacto es fundamental para establecer un vínculo de confianza.</p>
+            <div class="proceso-detalle">
+                <span>📋 Recogemos información detallada</span>
+                <span>👪 Participación de la familia</span>
+            </div>
+        </div>
+
+        <!-- Paso 2: Evaluación psicopedagógica -->
+        <div class="proceso-card">
+            <div class="proceso-icono">📊</div>
+            <h3>2. Evaluación</h3>
+            <p class="proceso-descripcion">Aplicamos pruebas, observaciones y cuestionarios adaptados a la edad para identificar fortalezas, dificultades y áreas de oportunidad.</p>
+            <div class="proceso-detalle">
+                <span>🧩 Evaluación cognitiva y emocional</span>
+                <span>📝 Análisis del rendimiento escolar</span>
+            </div>
+        </div>
+
+        <!-- Paso 3: Diseño de intervención -->
+        <div class="proceso-card">
+            <div class="proceso-icono">✏️</div>
+            <h3>3. Diseño de intervención</h3>
+            <p class="proceso-descripcion">Elaboramos un plan personalizado con objetivos claros y estrategias específicas, basadas en el enfoque cognitivo-conductual y las necesidades del niño.</p>
+            <div class="proceso-detalle">
+                <span>🎯 Metas a corto y largo plazo</span>
+                <span>📅 Actividades y técnicas adaptadas</span>
+            </div>
+        </div>
+
+        <!-- Paso 4: Intervención y seguimiento -->
+        <div class="proceso-card">
+            <div class="proceso-icono">🔄</div>
+            <h3>4. Intervención y seguimiento</h3>
+            <p class="proceso-descripcion">Sesiones regulares con el niño y reuniones periódicas con los padres para evaluar avances, ajustar estrategias y garantizar el progreso.</p>
+            <div class="proceso-detalle">
+                <span>📈 Monitoreo continuo</span>
+                <span>🤝 Retroalimentación a la familia</span>
+            </div>
+        </div>
+    </div>
+
+   
+</section>
             <!-- Sobre la psicóloga -->
             
                 <!-- Sobre el psicólogo - CON FOTO, SIN LA CARA SVG -->
@@ -202,7 +302,7 @@
         
         <!-- DESCRIPCIÓN DEL DOCTOR -->
         <div class="about-content">
-            <h2>LIC. Edson Gutiérrez Pellegrin</h2>
+            <h2>Lic. Edson Gutiérrez Pellegrin</h2>
             <p class="about-subtitle">Licenciado en Psicopedagogía con enfoque Cognitivo-Conductual.</p>
             <p class="about-description">Especialista en acompañamiento infantil y adolescente.</p>
 
@@ -242,37 +342,58 @@
 </section>
             </section>
 
-            <!-- Testimonios -->
-            <!-- Verdades y Mitos -->
+        <!-- Verdades y Mitos -->
 <section class="testimonials" id="recursos">
     <h2 class="section-title">Verdades y Mitos sobre la Psicología</h2>
 
     <div class="testimonial-grid">
-
-        <!-- MITO -->
+        <!-- MITO 1 -->
         <div class="testimonial-item mito">
             <h3 class="icono">❌ MITO</h3>
             <p>Ir al psicólogo es solo para personas con problemas graves.</p>
         </div>
 
-        <!-- VERDAD -->
+        <!-- VERDAD 1 -->
         <div class="testimonial-item verdad">
             <h3 class="icono">✅ VERDAD</h3>
             <p>La terapia ayuda a cualquier persona que quiera mejorar su bienestar emocional.</p>
         </div>
 
-        <!-- MITO -->
+        <!-- MITO 2 -->
         <div class="testimonial-item mito">
             <h3 class="icono">❌ MITO</h3>
             <p>Los niños no necesitan terapia porque “ya se les pasará”.</p>
         </div>
 
-        <!-- VERDAD -->
+        <!-- VERDAD 2 -->
         <div class="testimonial-item verdad">
             <h3 class="icono">✅ VERDAD</h3>
             <p>La atención temprana en la infancia fortalece el desarrollo emocional.</p>
         </div>
 
+        <!-- MITO 3 -->
+        <div class="testimonial-item mito">
+            <h3 class="icono">❌ MITO</h3>
+            <p>Los psicólogos solo te escuchan y no dan soluciones.</p>
+        </div>
+
+        <!-- VERDAD 3 -->
+        <div class="testimonial-item verdad">
+            <h3 class="icono">✅ VERDAD</h3>
+            <p>Los psicólogos ofrecen herramientas y estrategias prácticas para enfrentar problemas.</p>
+        </div>
+
+        <!-- MITO 4 -->
+        <div class="testimonial-item mito">
+            <h3 class="icono">❌ MITO</h3>
+            <p>La terapia es larga y nunca termina.</p>
+        </div>
+
+        <!-- VERDAD 4 -->
+        <div class="testimonial-item verdad">
+            <h3 class="icono">✅ VERDAD</h3>
+            <p>La duración de la terapia depende de cada persona y sus objetivos; muchas veces es breve y efectiva.</p>
+        </div>
     </div>
 </section>
 <!-- SECCIÓN DE EVENTOS Y TALLERES -->
@@ -355,7 +476,7 @@ Importancia del TOE .</p>
             <div class="resena-autor">
 
                 <div class="resena-info">
-                    <h4>María Fernández</h4>
+                    <h4>María lopez</h4>
                     <p>Madre de familia</p>
                 </div>
             </div>
@@ -368,7 +489,7 @@ Importancia del TOE .</p>
             <div class="resena-autor">
                 
                 <div class="resena-info">
-                    <h4>Carlos Rodríguez</h4>
+                    <h4>Carlos Gonsalez</h4>
                     <p>Padre de familia</p>
                 </div>
             </div>
@@ -381,7 +502,9 @@ Importancia del TOE .</p>
             <div class="resena-autor">
                 
                 <div class="resena-info">
-                    <h4>Patricia Mendoza</h4>
+                    <h4>Patricia Macalupu
+
+                    </h4>
                     <p>Madre de familia</p>
                 </div>
             </div>
@@ -395,7 +518,7 @@ Importancia del TOE .</p>
             <div class="resena-autor">
                 
                 <div class="resena-info">
-                    <h4>Lucía Gómez</h4>
+                    <h4>Lucía Quispe</h4>
                     <p>Madre de familia</p>
                 </div>
             </div>
@@ -426,7 +549,7 @@ Importancia del TOE .</p>
                 <p>Algunas señales pueden ser: cambios bruscos en el comportamiento, dificultad para dormir, bajo rendimiento escolar sin causa aparente, irritabilidad constante, aislamiento o regresiones (volver a hacerse pipí, etc.). Si notas estas señales por más de 2-3 semanas, una consulta con un especialista puede ayudar a entender mejor la situación.</p>
             </div>
         </div>
-        
+        <br>
         <!-- Pregunta 2 -->
         <div class="faq-item">
             <div class="faq-pregunta">
@@ -437,7 +560,7 @@ Importancia del TOE .</p>
                 <p>Las sesiones tienen una duración aproximada de 45 a 50 minutos. La frecuencia recomendada es generalmente semanal, especialmente al inicio del proceso, para poder establecer un vínculo terapéutico sólido y dar continuidad al trabajo emocional.</p>
             </div>
         </div>
-        
+        <br>
         <!-- Pregunta 3 -->
         <div class="faq-item">
             <div class="faq-pregunta">
@@ -448,7 +571,7 @@ Importancia del TOE .</p>
                 <p>Actualmente trabajamos de manera particular. Aceptamos pago en efectivo, transferencia bancaria y Yape/Plin. Consulta por nuestras tarifas promocionales para pacientes frecuentes o paquetes de sesiones.</p>
             </div>
         </div>
-        
+        <br>
         <!-- Pregunta 4 -->
         <div class="faq-item">
             <div class="faq-pregunta">
@@ -459,7 +582,7 @@ Importancia del TOE .</p>
                 <p>¡Sí! Ofrecemos sesiones tanto presenciales en nuestra oficina en Piura, como online a través de videollamada para quienes viven fuera de la ciudad o prefieren la comodidad de su hogar. Ambas modalidades tienen la misma calidad profesional.</p>
             </div>
         </div>
-        
+        <br>
         <!-- Pregunta 5 -->
         <div class="faq-item">
             <div class="faq-pregunta">
@@ -473,7 +596,7 @@ Importancia del TOE .</p>
                 <p>  3)  Enviándonos un mensaje por Instagram o Facebook o Tiktok Te responderemos a la brevedad posible para coordinar el día y hora de de tu cita.</p>
             </div>
         </div>
-        
+        <br>
          <!-- Pregunta 6 -->
 <div class="faq-item">
     <div class="faq-pregunta">
@@ -489,7 +612,7 @@ Importancia del TOE .</p>
         <p>Adaptamos las estrategias terapéuticas según la edad y las necesidades individuales de cada paciente, trabajando siempre de la mano con la familia cuando es necesario.</p>
     </div>
 </div>
-
+<br>
 <!-- Pregunta 7 -->
 <div class="faq-item">
     <div class="faq-pregunta">
@@ -647,21 +770,54 @@ Importancia del TOE .</p>
                 <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 996110346">
             </div>
             
-            <div class="campo-formulario">
-                <label for="motivo">Motivo de consulta</label>
-                <select id="motivo" name="motivo">
-                    <option value="">Selecciona una opción</option>
-                    <option value="tolerancia_frustracion">Tolerancia a la frustración</option>
-                    <option value="control_impulsos">Control de impulsos</option>
-                    <option value="atencion_concentracion_memoria">Atención, concentración y memoria</option>
-                    <option value="control_ira">Control de ira</option>
-                    <option value="socializacion">Socialización</option>
-                    <option value="autoestima">Autoestima</option>
-                    <option value="orientacion_vocacional">Orientación Vocacional</option>
-                    <option value="ansiedad">Ansiedad</option>
-                    <option value="estres">Estrés</option>
-                </select>
+           <div class="campo-formulario dropdown-checkbox">
+    <label>Motivo de consulta</label>
+    <div class="dropdown-container">
+        <button type="button" class="dropdown-button" id="dropdownMotivoBtn">
+            Selecciona una o más opciones
+        </button>
+        <div class="dropdown-opciones" id="dropdownMotivoOpciones">
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_tolerancia_frustracion" value="tolerancia_frustracion">
+                <label for="motivo_tolerancia_frustracion">Tolerancia a la frustración</label>
             </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_control_impulsos" value="control_impulsos">
+                <label for="motivo_control_impulsos">Control de impulsos</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_atencion_concentracion_memoria" value="atencion_concentracion_memoria">
+                <label for="motivo_atencion_concentracion_memoria">Atención, concentración y memoria</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_control_ira" value="control_ira">
+                <label for="motivo_control_ira">Control de ira</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_socializacion" value="socializacion">
+                <label for="motivo_socializacion">Socialización</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_autoestima" value="autoestima">
+                <label for="motivo_autoestima">Autoestima</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_orientacion_vocacional" value="orientacion_vocacional">
+                <label for="motivo_orientacion_vocacional">Orientación Vocacional</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_ansiedad" value="ansiedad">
+                <label for="motivo_ansiedad">Ansiedad</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="motivo_estres" value="estres">
+                <label for="motivo_estres">Estrés</label>
+            </div>
+        </div>
+    </div>
+    <!-- Campo oculto que guarda los valores seleccionados (separados por coma) -->
+    <input type="hidden" name="motivo" id="motivoSelected" value="">
+</div>
             
             <div class="campo-formulario">
                 <label for="profesional">Asignación según disponibilidad </label>
@@ -689,588 +845,54 @@ Importancia del TOE .</p>
         </div>
     </div>
 </div>
-<!-- MODALES PARA CADA ÁREA DE ACOMPAÑAMIENTO -->
-<!-- TOLERANCIA A LA FRUSTRACIÓN -->
-<div id="modal-frustracion" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">🧠</div>
-        <h2 class="card-modal-titulo">TOLERANCIA A LA FRUSTRACIÓN</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="frustracion-poster.jpg">
-                <source src="videos/frustracion.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Aprender a manejar la frustración es fundamental para el desarrollo emocional de tus hijos. Les enseñamos a aceptar que no siempre se puede ganar y que los errores son oportunidades para crecer.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Desarrollan paciencia y perseverancia</li>
-                <li>Aprenden a manejar la decepción</li>
-                <li>Mejoran su autoestima al superar retos</li>
-                <li>Reducen berrinches y pataletas</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
 
-<!-- CONTROL DE IMPULSOS -->
-<div id="modal-impulsos" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">⚡</div>
-        <h2 class="card-modal-titulo">CONTROL DE IMPULSOS</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="impulsos-poster.jpg">
-                <source src="videos/impulsos.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Enseñamos a tus hijos a pensar antes de actuar, a reconocer sus impulsos y a tomar decisiones más conscientes en su día a día.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Mejora la toma de decisiones</li>
-                <li>Reduce comportamientos riesgosos</li>
-                <li>Fomenta la autorregulación emocional</li>
-                <li>Fortalece la atención y concentración</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
 
-<!-- ATENCIÓN, CONCENTRACIÓN Y MEMORIA -->
-<div id="modal-atencion" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">🧩</div>
-        <h2 class="card-modal-titulo">ATENCIÓN, CONCENTRACIÓN Y MEMORIA</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="atencion-poster.jpg">
-                <source src="videos/atencion.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Fortalecemos las capacidades cognitivas de tus hijos mediante ejercicios prácticos y divertidos que mejoran su rendimiento académico.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Mejora el rendimiento escolar</li>
-                <li>Aumenta la capacidad de retener información</li>
-                <li>Desarrolla la capacidad de enfoque</li>
-                <li>Facilita el aprendizaje</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
 
-<!-- CONTROL DE IRA -->
-<div id="modal-ira" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">😤</div>
-        <h2 class="card-modal-titulo">CONTROL DE IRA</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="ira-poster.jpg">
-                <source src="videos/ira.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Ayudamos a tus hijos a identificar qué desencadena su enojo y a expresar sus emociones de manera saludable y constructiva.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Reduce explosiones de ira</li>
-                <li>Mejora la comunicación familiar</li>
-                <li>Enseña técnicas de relajación</li>
-                <li>Fomenta relaciones más armoniosas</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- SOCIALIZACIÓN -->
-<div id="modal-socializacion" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">👥</div>
-        <h2 class="card-modal-titulo">SOCIALIZACIÓN</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="social-poster.jpg">
-                <source src="videos/socializacion.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Impulsamos el desarrollo de habilidades sociales para que tus hijos puedan relacionarse mejor, hacer amigos y sentirse integrados.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Mejora la autoestima social</li>
-                <li>Facilita hacer amigos</li>
-                <li>Reduce la timidez</li>
-                <li>Fomenta el trabajo en equipo</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- AUTOESTIMA -->
-<div id="modal-autoestima" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">💛</div>
-        <h2 class="card-modal-titulo">AUTOESTIMA</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="autoestima-poster.jpg">
-                <source src="videos/autoestima.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Trabajamos en fortalecer la valoración personal de tus hijos, ayudándoles a construir una imagen positiva y segura de sí mismos.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Aumenta la confianza en sí mismos</li>
-                <li>Mejora la resiliencia</li>
-                <li>Reduce la inseguridad</li>
-                <li>Fomenta una actitud positiva</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- ORIENTACIÓN VOCACIONAL -->
-<div id="modal-vocacional" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">🎓</div>
-        <h2 class="card-modal-titulo">ORIENTACIÓN VOCACIONAL</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="vocacional-poster.jpg">
-                <source src="videos/vocacional.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Acompañamos a tus hijos a descubrir sus verdaderas pasiones, habilidades y talentos para que elijan su futuro con seguridad.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Claridad en su futuro académico</li>
-                <li>Descubren sus talentos ocultos</li>
-                <li>Reducen la ansiedad por decidir</li>
-                <li>Toman decisiones con seguridad</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- ANSIEDAD -->
-<div id="modal-ansiedad" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">😰</div>
-        <h2 class="card-modal-titulo">ANSIEDAD</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="ansiedad-poster.jpg">
-                <source src="videos/ansiedad.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Brindamos herramientas prácticas para que tus hijos aprendan a gestionar la ansiedad y recuperar la calma en su vida diaria.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Reducen preocupaciones excesivas</li>
-                <li>Aprenden técnicas de respiración</li>
-                <li>Mejoran la calidad del sueño</li>
-                <li>Recuperan la tranquilidad</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- ESTRÉS -->
-<div id="modal-estres" class="card-modal">
-    <div class="card-modal-contenido">
-        <span class="cerrar-card-modal">&times;</span>
-        <div class="card-modal-icono">😩</div>
-        <h2 class="card-modal-titulo">ESTRÉS</h2>
-        
-        <div class="card-modal-video">
-            <video controls poster="estres-poster.jpg">
-                <source src="videos/estres.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="card-modal-info">
-            <h3>¿Qué es?</h3>
-            <p>Apoyamos a tus hijos a identificar las causas de su estrés y a desarrollar técnicas efectivas para manejarlo y encontrar equilibrio.</p>
-            
-            <h3>Beneficios:</h3>
-            <ul class="card-modal-lista">
-                <li>Identifican fuentes de estrés</li>
-                <li>Aprenden a relajarse</li>
-                <li>Mejoran su rendimiento</li>
-                <li>Recuperan el bienestar emocional</li>
-            </ul>
-        </div>
-        
-        <button class="card-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosModales();">AGENDAR CITA</button>
-    </div>
-</div>
-<!-- ===== MODALES PARA "¿CUÁNDO LLEVAR A MI HIJO?" ===== -->
-
-<!-- Modal: Cambios en intereses y rutina -->
-<div id="consejo-cambios" class="consejo-modal">
-    <div class="consejo-modal-contenido">
-        <span class="cerrar-consejo-modal">&times;</span>
-        <div class="consejo-modal-icono">🔄</div>
-        <h2 class="consejo-modal-titulo">Cambios en intereses y rutina</h2>
-        
-        <div class="consejo-modal-video">
-            <video controls poster="cambios-poster.jpg">
-                <source src="videos/cambios-rutina.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="consejo-modal-info">
-            <h3>¿Por qué es importante?</h3>
-            <p>Los cambios repentinos en los intereses y rutinas de tu hijo pueden ser señales de que algo no está bien emocionalmente. Los niños expresan su malestar a través de cambios en su comportamiento cotidiano.</p>
-            
-            <h3>Señales de alerta:</h3>
-            <ul class="consejo-modal-lista">
-                <li><strong>Gustos:</strong> Abandona repentinamente actividades que antes amaba</li>
-                <li><strong>Motivación:</strong> Muestra desinterés generalizado, incluso en cosas que le emocionaban</li>
-                <li><strong>Rutina:</strong> Cambios en hábitos de sueño, alimentación o juego</li>
-                <li><strong>Eventos:</strong> Reacciona de manera intensa a cambios familiares (divorcio, mudanza, pérdida)</li>
-            </ul>
-            
-            <h3>¿Qué puedes hacer?</h3>
-            <p>Observa sin juzgar, mantén una comunicación abierta y busca ayuda profesional si los cambios persisten más de 2-3 semanas. Un psicólogo puede ayudar a identificar la causa subyacente.</p>
-        </div>
-        
-        <button class="consejo-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosConsejos();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- Modal: Rendimiento y atención escolar -->
-<div id="consejo-rendimiento" class="consejo-modal">
-    <div class="consejo-modal-contenido">
-        <span class="cerrar-consejo-modal">&times;</span>
-        <div class="consejo-modal-icono">📚</div>
-        <h2 class="consejo-modal-titulo">Rendimiento y atención escolar</h2>
-        
-        <div class="consejo-modal-video">
-            <video controls poster="rendimiento-poster.jpg">
-                <source src="videos/rendimiento.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="consejo-modal-info">
-            <h3>¿Por qué es importante?</h3>
-            <p>El bajo rendimiento escolar no siempre es falta de estudio. Puede esconder problemas de atención, dificultades de aprendizaje o conflictos emocionales que afectan su capacidad de concentración.</p>
-            
-            <h3>Señales de alerta:</h3>
-            <ul class="consejo-modal-lista">
-                <li><strong>Notas:</strong> Bajón repentino en calificaciones sin causa aparente</li>
-                <li><strong>Atención:</strong> Se distrae fácilmente, no termina tareas</li>
-                <li><strong>Aprendizaje:</strong> Dificultades específicas en lectura, escritura o matemáticas</li>
-                <li><strong>Hiperactividad:</strong> No puede estar quieto, interrumpe constantemente</li>
-            </ul>
-            
-            <h3>¿Qué puedes hacer?</h3>
-            <p>Habla con sus profesores, observa sus hábitos de estudio y considera una evaluación psicopedagógica para descartar problemas como dislexia, TDAH u otras dificultades.</p>
-        </div>
-        
-        <button class="consejo-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosConsejos();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- Modal: Relaciones sociales -->
-<div id="consejo-social" class="consejo-modal">
-    <div class="consejo-modal-contenido">
-        <span class="cerrar-consejo-modal">&times;</span>
-        <div class="consejo-modal-icono">👥</div>
-        <h2 class="consejo-modal-titulo">Relaciones sociales</h2>
-        
-        <div class="consejo-modal-video">
-            <video controls poster="social-poster.jpg">
-                <source src="videos/relaciones-sociales.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="consejo-modal-info">
-            <h3>¿Por qué es importante?</h3>
-            <p>Las dificultades para relacionarse pueden afectar profundamente la autoestima y el bienestar emocional de tu hijo. El aislamiento o los conflictos constantes son señales de alerta.</p>
-            
-            <h3>Señales de alerta:</h3>
-            <ul class="consejo-modal-lista">
-                <li><strong>Aislamiento:</strong> Prefiere estar solo, evita jugar con otros niños</li>
-                <li><strong>Acoso:</strong> Puede ser víctima o perpetrador de bullying</li>
-                <li><strong>Comunicación:</strong> Dificultad para expresarse o se niega a hablar</li>
-                <li><strong>Dependencia:</strong> No se separa de los padres, incluso en situaciones apropiadas para su edad</li>
-            </ul>
-            
-            <h3>¿Qué puedes hacer?</h3>
-            <p>Fomenta actividades grupales, habla con sus profesores sobre su comportamiento en el colegio y busca ayuda si notas que el aislamiento o los conflictos son persistentes.</p>
-        </div>
-        
-        <button class="consejo-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosConsejos();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- Modal: Problemas de conducta y emocionales -->
-<div id="consejo-conducta" class="consejo-modal">
-    <div class="consejo-modal-contenido">
-        <span class="cerrar-consejo-modal">&times;</span>
-        <div class="consejo-modal-icono">😤</div>
-        <h2 class="consejo-modal-titulo">Problemas de conducta y emocionales</h2>
-        
-        <div class="consejo-modal-video">
-            <video controls poster="conducta-poster.jpg">
-                <source src="videos/conducta.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="consejo-modal-info">
-            <h3>¿Por qué es importante?</h3>
-            <p>Los problemas de conducta suelen ser la forma en que los niños expresan su malestar emocional. La impulsividad, agresividad o desobediencia pueden tener causas profundas.</p>
-            
-            <h3>Señales de alerta:</h3>
-            <ul class="consejo-modal-lista">
-                <li><strong>Límites:</strong> Desafía constantemente a padres y autoridades</li>
-                <li><strong>Impulsividad:</strong> Actúa sin pensar, tiene dificultad para esperar</li>
-                <li><strong>Agresividad:</strong> Golpea, insulta o destruye cosas cuando se enoja</li>
-                <li><strong>Frustración:</strong> No tolera que las cosas no salgan como quiere</li>
-                <li><strong>Emociones:</strong> Muestra ansiedad, tristeza o irritabilidad constante</li>
-            </ul>
-            
-            <h3>¿Qué puedes hacer?</h3>
-            <p>Establece límites claros y consistentes, valida sus emociones y busca ayuda profesional si la conducta interfiere con su vida diaria o la dinámica familiar.</p>
-        </div>
-        
-        <button class="consejo-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosConsejos();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- Modal: Desarrollo y salud -->
-<div id="consejo-salud" class="consejo-modal">
-    <div class="consejo-modal-contenido">
-        <span class="cerrar-consejo-modal">&times;</span>
-        <div class="consejo-modal-icono">💚</div>
-        <h2 class="consejo-modal-titulo">Desarrollo y salud</h2>
-        
-        <div class="consejo-modal-video">
-            <video controls poster="salud-poster.jpg">
-                <source src="videos/salud.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="consejo-modal-info">
-            <h3>¿Por qué es importante?</h3>
-            <p>Los problemas de salud física y del desarrollo pueden tener un componente emocional importante. Así mismo, los problemas emocionales pueden manifestarse en síntomas físicos.</p>
-            
-            <h3>Señales de alerta:</h3>
-            <ul class="consejo-modal-lista">
-                <li><strong>Sueño:</strong> Pesadillas constantes, dificultad para dormir o exceso de sueño</li>
-                <li><strong>Control:</strong> Se hace pipí o popó encima después de haber aprendido a controlar</li>
-                <li><strong>Sustancias:</strong> Consumo de alcohol, tabaco u otras drogas en adolescentes</li>
-                <li><strong>Alimentación:</strong> Señales de trastornos alimentarios (come muy poco, come en exceso, se provoca vómitos)</li>
-                <li><strong>Riesgos:</strong> Conductas sexuales de riesgo en adolescentes</li>
-            </ul>
-            
-            <h3>¿Qué puedes hacer?</h3>
-            <p>Consulta primero con un pediatra para descartar causas físicas. Si todo está bien, un psicólogo puede ayudar a abordar los aspectos emocionales subyacentes.</p>
-        </div>
-        
-        <button class="consejo-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosConsejos();">AGENDAR CITA</button>
-    </div>
-</div>
-
-<!-- Modal: Problemas cognitivos y autoestima -->
-<div id="consejo-cognitivo" class="consejo-modal">
-    <div class="consejo-modal-contenido">
-        <span class="cerrar-consejo-modal">&times;</span>
-        <div class="consejo-modal-icono">🧠</div>
-        <h2 class="consejo-modal-titulo">Problemas cognitivos y autoestima</h2>
-        
-        <div class="consejo-modal-video">
-            <video controls poster="cognitivo-poster.jpg">
-                <source src="videos/cognitivo.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-        
-        <div class="consejo-modal-info">
-            <h3>¿Por qué es importante?</h3>
-            <p>La forma en que tu hijo se ve a sí mismo afecta todas las áreas de su vida. Una baja autoestima puede limitar su potencial y hacerlo más vulnerable a problemas emocionales.</p>
-            
-            <h3>Señales de alerta:</h3>
-            <ul class="consejo-modal-lista">
-                <li><strong>Autovaloración:</strong> Se menosprecia constantemente, dice "no sirvo para nada"</li>
-                <li><strong>Confianza:</strong> Desconfía de sus propias capacidades, incluso en cosas que sabe hacer</li>
-                <li><strong>Decisiones:</strong> Le cuesta muchísimo tomar decisiones simples</li>
-                <li><strong>Procrastinación:</strong> Deja todo para después por miedo a no hacerlo bien</li>
-                <li><strong>Perfeccionismo:</strong> Se exige demasiado y se frustra si no es perfecto</li>
-            </ul>
-            
-            <h3>¿Qué puedes hacer?</h3>
-            <p>Reconoce sus esfuerzos más que sus resultados, evita comparaciones y busca ayuda profesional si notas que su baja autoestima le impide disfrutar de la vida o enfrentar desafíos.</p>
-        </div>
-        
-        <button class="consejo-modal-btn" onclick="document.getElementById('abrir-modal').click(); cerrarTodosConsejos();">AGENDAR CITA</button>
-    </div>
-</div>
-<script>
-// ===== MODALES DE CONSEJOS =====
-document.addEventListener('DOMContentLoaded', function() {
-    // Asignar eventos a cada when-item
-    const whenItems = document.querySelectorAll('.when-item');
-    
-    // Mapeo de textos a IDs de modales de consejos
-    const consejoMap = {
-        'Cambios en intereses y rutina': 'consejo-cambios',
-        'Rendimiento y atención escolar': 'consejo-rendimiento',
-        'Relaciones sociales': 'consejo-social',
-        'Problemas de conducta y emocionales': 'consejo-conducta',
-        'Desarrollo y salud': 'consejo-salud',
-        'Problemas cognitivos y autoestima': 'consejo-cognitivo'
-    };
-    
-    whenItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            // Obtener el título
-            const titulo = this.querySelector('h3').textContent.trim();
-            console.log('Clic en consejo:', titulo);
-            
-            // Buscar el modal correspondiente
-            const modalId = consejoMap[titulo];
-            if (modalId) {
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
-            }
-        });
-    });
-    
-    // Cerrar modales de consejos con la X
-    document.querySelectorAll('.cerrar-consejo-modal').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const modal = this.closest('.consejo-modal');
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    });
-    
-    // Cerrar modal haciendo clic fuera
-    window.addEventListener('click', function(e) {
-        if (e.target.classList.contains('consejo-modal')) {
-            e.target.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-});
-
-// Función para cerrar todos los modales de consejos
-function cerrarTodosConsejos() {
-    document.querySelectorAll('.consejo-modal').forEach(modal => {
-        modal.style.display = 'none';
-    });
-}
-</script>
     <script>
-       // Elementos
-const pantallaCarga = document.getElementById('pantalla-carga');
-const splashScreen = document.getElementById('splash-screen');
-const video = document.getElementById('video-bienvenida');
-const mainContent = document.getElementById('mainContent');
-const burbuja = document.querySelector('.burbuja-bienvenida');
+        // Elementos
+        const pantallaCarga = document.getElementById('pantalla-carga');
+        const splashScreen = document.getElementById('splash-screen');
+        const video = document.getElementById('video-bienvenida');
+        const mainContent = document.getElementById('mainContent');
+        const burbuja1 = document.getElementById('burbuja1');
+        const burbuja2 = document.getElementById('burbuja2');
 
-// Ocultar scroll mientras carga
-document.body.style.overflow = 'hidden';
+        // Ocultar scroll mientras carga
+        document.body.style.overflow = 'hidden';
 
-// Mostrar carga por 2 segundos
-setTimeout(() => {
-    pantallaCarga.style.transition = 'opacity 0.8s ease';
-    pantallaCarga.style.opacity = '0';
-    
-    setTimeout(() => {
-        pantallaCarga.style.display = 'none';
-        splashScreen.style.display = 'flex';
-        
-        // Mostrar burbuja inmediatamente al aparecer el video
-        if (burbuja) {
-            burbuja.style.opacity = '1';
-            burbuja.style.animation = 'aparecerBurbuja 0.5s ease forwards, flotar 4s ease-in-out infinite';
-        }
-        
-        video.play().catch(e => console.log(e));
-        splashScreen.style.animation = 'aparecer 1s ease';
-    }, 800);
-}, 2000);
+        // Mostrar carga por 2 segundos
+        setTimeout(() => {
+            pantallaCarga.style.transition = 'opacity 0.8s ease';
+            pantallaCarga.style.opacity = '0';
+            
+            setTimeout(() => {
+                pantallaCarga.style.display = 'none';
+                splashScreen.style.display = 'flex';
+                
+                // Mostrar primera burbuja
+                if (burbuja1) {
+                    burbuja1.style.opacity = '1';
+                    burbuja1.style.animation = 'aparecerBurbuja 0.5s ease forwards, flotar 4s ease-in-out infinite';
+                }
+                
+                // Programar aparición de segunda burbuja después de 2.5 segundos
+                setTimeout(() => {
+                    if (burbuja1) {
+                        burbuja1.style.opacity = '0';
+                        burbuja1.style.animation = 'none';
+                    }
+                    if (burbuja2) {
+                        burbuja2.style.opacity = '1';
+                        burbuja2.style.animation = 'aparecerBurbuja 0.5s ease forwards, flotar 4s ease-in-out infinite';
+                    }
+                }, 2500);
+                
+                video.play().catch(e => console.log(e));
+                splashScreen.style.animation = 'aparecer 1s ease';
+            }, 800);
+        }, 2000);
 
-        // Cuando termina el video
+        // Cuando termina el video (se mantiene igual)
         video.addEventListener('ended', function() {
             splashScreen.style.transition = 'opacity 1.2s ease';
             splashScreen.style.opacity = '0';
@@ -1285,7 +907,7 @@ setTimeout(() => {
             }, 1200);
         });
 
-        // Tiempo de seguridad (si el video es muy corto o hay error)
+        // Tiempo de seguridad
         setTimeout(function() {
             if (splashScreen.style.display === 'flex' && splashScreen.style.opacity !== '0') {
                 splashScreen.style.transition = 'opacity 1.2s ease';
@@ -1298,14 +920,14 @@ setTimeout(() => {
             }
         }, 10000);
 
-        // Para móviles - reproducción automática
+        // Para móviles
         document.addEventListener('touchstart', function() {
             if (video.paused && splashScreen.style.display === 'flex') {
                 video.play();
             }
         }, { once: true });
 
-        // Efecto parallax
+        // Efecto parallax (se mantiene)
         window.addEventListener('scroll', function() {
             const parallaxBg = document.getElementById('parallaxBg');
             const parallaxOverlay = document.getElementById('parallaxOverlay');
@@ -1328,167 +950,275 @@ setTimeout(() => {
             }
         });
 
-        // ===== FORMULARIO MODAL =====
-const modal = document.getElementById('modal-contacto');
-const btnAbrir = document.getElementById('abrir-modal');
-const btnCerrar = document.querySelector('.cerrar-modal');
+        // ===== FORMULARIO MODAL (se mantiene) =====
+        const modal = document.getElementById('modal-contacto');
+        const btnAbrir = document.getElementById('abrir-modal');
+        const btnCerrar = document.querySelector('.cerrar-modal');
 
-// Abrir modal
-btnAbrir.onclick = function() {
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-// Cerrar modal (clic en X)
-btnCerrar.onclick = function() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Cerrar modal (clic fuera del contenido)
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// Cerrar modal con tecla ESC
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.style.display === 'block') {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// ===== FAQ ACORDEÓN =====
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-    const pregunta = item.querySelector('.faq-pregunta');
-    
-    pregunta.addEventListener('click', () => {
-        // Cerrar otros items (opcional)
-        /*
-        faqItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('activo')) {
-                otherItem.classList.remove('activo');
-            }
-        });
-        */
-        
-        // Abrir/cerrar el actual
-        item.classList.toggle('activo');
-        
-        // Cambiar el ícono
-        const icono = item.querySelector('.faq-icono');
-        if (item.classList.contains('activo')) {
-            icono.textContent = '✕';
-        } else {
-            icono.textContent = '➕';
+        btnAbrir.onclick = function() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
-    });
-});
-    </script>
-    <script>
-// Script para el botón de sonido del video vertical
-document.addEventListener('DOMContentLoaded', function() {
-    const video = document.querySelector('.footer-video-vertical');
-    const soundBtn = document.getElementById('unmute-btn');
-    
-    if (video && soundBtn) {
-        soundBtn.addEventListener('click', function() {
-            if (video.muted) {
-                video.muted = false;
-                soundBtn.textContent = '🔊 Silenciar';
-                soundBtn.style.background = 'rgba(255, 255, 255, 0.4)';
-            } else {
-                video.muted = true;
-                soundBtn.textContent = '🔇 Activar sonido';
-                soundBtn.style.background = 'rgba(0, 0, 0, 0.5)';
+
+        btnCerrar.onclick = function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
-        });
-    }
-});
-</script>
-<script>
-// ===== MODALES DE LAS CARDS =====
-document.addEventListener('DOMContentLoaded', function() {
-    // Asignar eventos a cada card
-    const cards = document.querySelectorAll('.card');
-    
-    // Mapeo de títulos a IDs de modales
-    const modalMap = {
-        'TOLERANCIA A LA FRUSTRACIÓN': 'modal-frustracion',
-        'CONTROL DE IMPULSOS': 'modal-impulsos',
-        'ATENCIÓN, CONCENTRACIÓN Y MEMORIA': 'modal-atencion',
-        'CONTROL DE IRA': 'modal-ira',
-        'SOCIALIZACIÓN': 'modal-socializacion',
-        'AUTOESTIMA': 'modal-autoestima',
-        'ORIENTACIÓN VOCACIONAL': 'modal-vocacional',
-        'ANSIEDAD': 'modal-ansiedad',
-        'ESTRÉS': 'modal-estres'
-    };
-    
-    cards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // Evitar que el clic afecte a elementos dentro
-            e.stopPropagation();
-            
-            // Obtener el título de la card
-            const titulo = this.querySelector('h3').textContent.trim();
-            console.log('Clic en:', titulo);
-            
-            // Buscar el modal correspondiente
-            const modalId = modalMap[titulo];
-            if (modalId) {
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; // Prevenir scroll
-                }
-            }
-        });
-    });
-    
-    // Cerrar modales con la X
-    document.querySelectorAll('.cerrar-card-modal').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const modal = this.closest('.card-modal');
-            if (modal) {
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
-    });
-    
-    // Cerrar modal haciendo clic fuera del contenido
-    window.addEventListener('click', function(e) {
-        if (e.target.classList.contains('card-modal')) {
-            e.target.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // Cerrar con tecla ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.card-modal').forEach(modal => {
-                if (modal.style.display === 'block') {
-                    modal.style.display = 'none';
+
+        // ===== FAQ ACORDEÓN (se mantiene) =====
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const pregunta = item.querySelector('.faq-pregunta');
+            
+            pregunta.addEventListener('click', () => {
+                item.classList.toggle('activo');
+                
+                const icono = item.querySelector('.faq-icono');
+                if (item.classList.contains('activo')) {
+                    icono.textContent = '✕';
+                } else {
+                    icono.textContent = '➕';
+                }
+            });
+        });
+    </script>
+
+    <!-- Script para el botón de sonido del video vertical (se mantiene) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.footer-video-vertical');
+            const soundBtn = document.getElementById('unmute-btn');
+            
+            if (video && soundBtn) {
+                soundBtn.addEventListener('click', function() {
+                    if (video.muted) {
+                        video.muted = false;
+                        soundBtn.textContent = '🔊 Silenciar';
+                        soundBtn.style.background = 'rgba(255, 255, 255, 0.4)';
+                    } else {
+                        video.muted = true;
+                        soundBtn.textContent = '🔇 Activar sonido';
+                        soundBtn.style.background = 'rgba(0, 0, 0, 0.5)';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Scripts para modales de cards y consejos (se mantienen) -->
+    <script>
+        // ===== MODALES DE LAS CARDS =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            const modalMap = {
+                'TOLERANCIA A LA FRUSTRACIÓN': 'modal-frustracion',
+                'CONTROL DE IMPULSOS': 'modal-impulsos',
+                'ATENCIÓN, CONCENTRACIÓN Y MEMORIA': 'modal-atencion',
+                'CONTROL DE IRA': 'modal-ira',
+                'SOCIALIZACIÓN': 'modal-socializacion',
+                'AUTOESTIMA': 'modal-autoestima',
+                'ORIENTACIÓN VOCACIONAL': 'modal-vocacional',
+                'ANSIEDAD': 'modal-ansiedad',
+                'ESTRÉS': 'modal-estres'
+            };
+            
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const titulo = this.querySelector('h3').textContent.trim();
+                    const modalId = modalMap[titulo];
+                    if (modalId) {
+                        const modal = document.getElementById(modalId);
+                        if (modal) {
+                            modal.style.display = 'block';
+                            document.body.style.overflow = 'hidden';
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.cerrar-card-modal').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modal = this.closest('.card-modal');
+                    if (modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target.classList.contains('card-modal')) {
+                    e.target.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
             });
-        }
-    });
-});
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.card-modal').forEach(modal => {
+                        if (modal.style.display === 'block') {
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                }
+            });
+        });
 
-// Función para cerrar todos los modales
-function cerrarTodosModales() {
-    document.querySelectorAll('.card-modal').forEach(modal => {
-        modal.style.display = 'none';
+        function cerrarTodosModales() {
+            document.querySelectorAll('.card-modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+    </script>
+
+    <script>
+        // ===== MODALES DE CONSEJOS =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const whenItems = document.querySelectorAll('.when-item');
+            const consejoMap = {
+                'Cambios en intereses y rutina': 'consejo-cambios',
+                'Rendimiento y atención escolar': 'consejo-rendimiento',
+                'Relaciones sociales': 'consejo-social',
+                'Problemas de conducta y emocionales': 'consejo-conducta',
+                'Desarrollo y salud': 'consejo-salud',
+                'Problemas cognitivos y autoestima': 'consejo-cognitivo'
+            };
+            
+            whenItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const titulo = this.querySelector('h3').textContent.trim();
+                    const modalId = consejoMap[titulo];
+                    if (modalId) {
+                        const modal = document.getElementById(modalId);
+                        if (modal) {
+                            modal.style.display = 'block';
+                            document.body.style.overflow = 'hidden';
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.cerrar-consejo-modal').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modal = this.closest('.consejo-modal');
+                    if (modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target.classList.contains('consejo-modal')) {
+                    e.target.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        function cerrarTodosConsejos() {
+            document.querySelectorAll('.consejo-modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+    </script>
+
+    <!-- Script para dropdown multiselect (se mantiene) -->
+    <script>
+        (function() {
+            const dropdownBtn = document.getElementById('dropdownMotivoBtn');
+            const dropdownOpciones = document.getElementById('dropdownMotivoOpciones');
+            const hiddenInput = document.getElementById('motivoSelected');
+            const checkboxes = document.querySelectorAll('#dropdownMotivoOpciones input[type="checkbox"]');
+
+            if (!dropdownBtn || !dropdownOpciones || !hiddenInput) return;
+
+            dropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownOpciones.classList.toggle('mostrar');
+            });
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', actualizarSeleccion);
+            });
+
+            function actualizarSeleccion() {
+                const seleccionadosText = [];
+                const seleccionadosValues = [];
+
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        const label = document.querySelector(`label[for="${cb.id}"]`);
+                        seleccionadosText.push(label ? label.innerText : cb.value);
+                        seleccionadosValues.push(cb.value);
+                    }
+                });
+
+                if (seleccionadosText.length > 0) {
+                    dropdownBtn.innerText = seleccionadosText.join(', ');
+                } else {
+                    dropdownBtn.innerText = 'Selecciona una o más opciones';
+                }
+
+                hiddenInput.value = seleccionadosValues.join(',');
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!dropdownBtn.contains(e.target) && !dropdownOpciones.contains(e.target)) {
+                    dropdownOpciones.classList.remove('mostrar');
+                }
+            });
+
+            dropdownOpciones.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && dropdownOpciones.classList.contains('mostrar')) {
+                    dropdownOpciones.classList.remove('mostrar');
+                }
+            });
+        })();
+        // Menú hamburguesa
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Animación del icono (opcional)
+        hamburger.classList.toggle('active');
     });
 }
-</script>
+
+// Cerrar menú al hacer clic en un enlace (opcional)
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+    </script>
 </body>
 </html>
+
+
+
