@@ -3128,3 +3128,307 @@ body {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+@media screen and (max-width: 768px) {
+    /* ... tus estilos existentes ... */
+
+    /* ===== CORRECCIÓN PARA TÍTULOS LARGOS ===== */
+    .when-item {
+        padding: 1rem;               /* Reduce el padding interior */
+        box-sizing: border-box;
+    }
+
+    .when-item h3 {
+        font-size: 1.3rem;           /* Tamaño más pequeño */
+        word-break: break-word;       /* Fuerza saltos de palabra si es necesario */
+        line-height: 1.2;
+        white-space: normal;          /* Permite múltiples líneas */
+        margin-bottom: 0.8rem;
+        padding-right: 0;             /* Elimina padding derecho extra */
+    }
+
+    .when-item ul li {
+        font-size: 0.95rem;           /* Ajuste fino para los items */
+        padding-left: 1.2rem;
+        word-break: break-word;
+    }
+}
+/* ===== VERSIÓN MÓVIL (hasta 768px) ===== */
+@media screen and (max-width: 768px) {
+    /* -----------------------------------------------
+       1. FONDO DIFERENTE PARA MÓVIL (desactivar parallax)
+    ----------------------------------------------- */
+    .parallax-bg {
+        background-image: url('Imagen3.png'); /* Cambia por tu imagen o usa color sólido */
+        background-attachment: scroll;       /* Sin parallax */
+        background-size: cover;
+        background-position: center;
+        transform: none !important;          /* Elimina el efecto de scroll */
+    }
+    .parallax-overlay {
+        display: none;                       /* Oculta la capa de color si no la quieres en móvil */
+    }
+
+    /* -----------------------------------------------
+       2. Ajustes generales de texto y contenedores
+    ----------------------------------------------- */
+    body {
+        font-size: 16px;                     /* Tamaño base fijo, evita escalados extraños */
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding: 1rem 1.2rem;                 /* Padding lateral adecuado */
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* -----------------------------------------------
+       3. Sección "¿Cuándo llevar a mi hijo/a al psicólogo?" (when-to-go)
+          - Aquí se concentraba el problema principal
+    ----------------------------------------------- */
+    .when-to-go {
+        padding: 2rem 1.2rem;                 /* Reduce el padding general */
+        border-radius: 40px;
+        margin: 2rem 0;
+    }
+
+    .when-grid {
+        grid-template-columns: 1fr;            /* Una columna */
+        gap: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .when-item {
+        padding: 1.2rem;                       /* Padding interior cómodo */
+        border-radius: 30px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .when-item h3 {
+        font-size: 1.4rem;                     /* Título más pequeño pero legible */
+        word-break: break-word;                 /* Permite dividir palabras largas */
+        hyphens: auto;                          /* (opcional) divide con guiones si es necesario */
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .when-item ul {
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .when-item ul li {
+        font-size: 0.95rem;                     /* Tamaño de lectura cómodo */
+        padding-left: 1.5rem;                    /* Espacio para el bullet */
+        margin-bottom: 0.7rem;
+        word-break: break-word;
+        line-height: 1.4;
+        box-sizing: border-box;
+    }
+
+    .when-item ul li::before {
+        font-size: 1.4rem;                       /* Bullet más pequeño pero visible */
+        top: -0.2rem;
+    }
+
+    /* -----------------------------------------------
+       4. Otras secciones propensas a desbordamiento
+    ----------------------------------------------- */
+    /* Cards de servicios */
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        margin: 2rem 0;
+    }
+
+    .card {
+        padding: 1.5rem;
+        border-radius: 30px;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        word-break: break-word;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    /* Sección de profesionales */
+    .about-section {
+        padding: 2rem 1.2rem;
+        border-radius: 40px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+        word-break: break-word;
+    }
+
+    .about-description {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .credenciales {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .credencial {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+
+    /* Sección de mitos y verdades */
+    .testimonials {
+        padding: 2rem 1.2rem;
+        border-radius: 40px;
+    }
+
+    .testimonial-item p {
+        font-size: 1rem;
+    }
+
+    /* Sección de eventos */
+    .eventos-section {
+        padding: 2rem 1.2rem;
+        border-radius: 40px;
+    }
+
+    .evento-info h3 {
+        font-size: 1.2rem;
+        word-break: break-word;
+    }
+
+    /* Sección de reseñas */
+    .resenas-section {
+        padding: 2rem 1.2rem;
+        border-radius: 40px;
+    }
+
+    .resena-texto {
+        font-size: 0.95rem;
+    }
+
+    /* Sección FAQ */
+    .faq-section {
+        padding: 2rem 1.2rem;
+        border-radius: 40px;
+    }
+
+    .faq-pregunta {
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .faq-respuesta p {
+        font-size: 0.9rem;
+    }
+
+    /* Footer (ajustes para que no desborde) */
+    .footer-grid-5 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .footer-col {
+        width: 100%;
+        max-width: 350px;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .footer-col h4 {
+        font-size: 1.1rem;
+        word-break: break-word;
+    }
+
+    .footer-enlaces a,
+    .footer-contacto a {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    /* -----------------------------------------------
+       5. Ajustes de navbar y botones (ya los tenías bien)
+    ----------------------------------------------- */
+    .navbar {
+        width: 98%;
+        margin: 2% auto;
+        padding: 0.8rem;
+        border-radius: 40px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .logo-circular {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 250, 250, 0.95);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+
+    .btn-pastel {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+        margin-left: auto;
+    }
+
+    /* -----------------------------------------------
+       6. Ajustes para pantallas muy pequeñas (≤480px)
+    ----------------------------------------------- */
+    @media screen and (max-width: 480px) {
+        .when-item h3 {
+            font-size: 1.3rem;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+        }
+        .about-content h2 {
+            font-size: 1.8rem;
+        }
+        .credencial {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+        }
+    }
+}
