@@ -61,6 +61,7 @@
         <a href="#contacto">CONTACTO</a>
     </div>
     <button class="btn-pastel" id="abrir-modal">AGENDAR CITA</button>
+   
 </nav>
         <section id="inicio">
         <main class="container">
@@ -420,10 +421,10 @@
             </div>
             <div class="evento-info">
                 <h3>Primeros auxilios psicológicos</h3>
-               
+                <p class="evento-descripcion">Charlas en I.E Madre Rafaela de la Pasión.</p>
                 <div class="evento-detalles">
                     <p class="evento-hora">⏰ 8 am - 10:00 am</p>
-                    <p class="evento-lugar">📍  I.E Madre Rafaela de la Pasión</p>
+                    <p class="evento-lugar">📍  LILIPUT</p>
                 </div>
                 <a href="#" class="evento-btn">MÁS INFORMACIÓN</a>
             </div>
@@ -431,7 +432,7 @@
  <!-- Evento 1 -->
         <div class="evento-card">
             <div class="evento-flyer">
-                <img src="dm.png" alt="Flyer del evento" class="flyer-imagen">
+                <img src="lili.png" alt="Flyer del evento" class="flyer-imagen">
                 <div class="evento-fecha">
                     <span class="fecha-dia">08 </span>
                     <span class="fecha-mes">mar</span>
@@ -457,10 +458,10 @@
             </div>
             <div class="evento-info">
                 <h3>Primeros auxilios psicológicos</h3>
-                
+                <p class="evento-descripcion">Charlas en el I.E Rosa Suárez Rafael.</p>
                 <div class="evento-detalles">
                     <p class="evento-hora">⏰ 8:30 am - 9:30 am</p>
-                    <p class="evento-lugar">📍  I.E Rosa Suárez Rafael</p>
+                    <p class="evento-lugar">📍  LILIPUT</p>
                 </div>
                 <a href="#" class="evento-btn">MÁS INFORMACIÓN</a>
             </div>
@@ -632,6 +633,32 @@
         <p>Todos los documentos se emiten de manera formal y profesional, luego de un proceso de evaluación responsable.</p>
     </div>
 </div>
+    </div>
+</section>
+<!-- CARRUSEL DE PACIENTES -->
+<section class="carrusel-pacientes-section">
+    <div class="carrusel-container">
+        <div class="carrusel-track">
+            <!-- Imágenes (reemplazar con las reales) -->
+            <img src="fotos/1.jpg" alt="Paciente 1">
+            <img src="fotos/2.jpg" alt="Paciente 2">
+            <img src="fotos/3.jpg" alt="Paciente 3">
+            <img src="fotos/4.jpg" alt="Paciente 4">
+            <img src="fotos/5.jpg" alt="Paciente 5">
+            <img src="fotos/6.jpg" alt="Paciente 6">
+            <!-- Duplicamos algunas para efecto infinito -->
+            <img src="fotos/7.jpg" alt="Paciente 2">
+            <img src="fotos/1.jpg" alt="Paciente 1">
+            <img src="fotos/2.jpg" alt="Paciente 2">
+            <img src="fotos/3.jpg" alt="Paciente 3">
+            <img src="fotos/4.jpg" alt="Paciente 4">
+            <img src="fotos/5.jpg" alt="Paciente 5">
+            <img src="fotos/6.jpg" alt="Paciente 6">
+            <!-- Duplicamos algunas para efecto infinito -->
+            <img src="fotos/7.jpg" alt="Paciente 2">
+             <!-- Imágenes (reemplazar con las reales) -->
+            
+        </div>
     </div>
 </section>
           <!-- Footer -->
@@ -1221,15 +1248,69 @@ navLinks.querySelectorAll('a').forEach(link => {
         hamburger.classList.remove('active');
     });
 });
+// Pausar carrusel al pasar el mouse
+const track = document.querySelector('.carrusel-track');
+if (track) {
+    track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+    });
+    track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+    });
+}
+// ===== CARRUSEL INFINITO LENTO =====
+(function() {
+    const track = document.getElementById('carruselTrack');
+    if (!track) return;
+
+    // Obtener las imágenes originales
+    const images = Array.from(track.children);
+    if (images.length === 0) return;
+
+    // Clonar todas las imágenes para crear el efecto infinito
+    images.forEach(img => {
+        const clone = img.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    let position = 0;
+    // Velocidad: píxeles por frame (valor más pequeño = más lento)
+    // 0.2 es bastante lento, puedes probar 0.3, 0.5, etc.
+    const speed = 0.1; // <--- AJUSTA ESTE VALOR
+
+    // Calcular el ancho de una imagen (asumimos que todas tienen el mismo ancho)
+    // y el gap (1rem = 16px)
+    const gap = 16; // en píxeles, igual que en CSS
+    const imageWidth = images[0].offsetWidth + gap;
+    const totalWidth = imageWidth * images.length; // ancho del conjunto original
+
+    let requestId;
+
+    function move() {
+        position -= speed; // movimiento hacia la izquierda
+
+        // Si nos hemos desplazado más del ancho original, reiniciamos posición
+        // y movemos el primer grupo al final (esto se hace automáticamente con los clones)
+        if (Math.abs(position) >= totalWidth) {
+            position = 0;
+            // Opcional: reordenar los nodos para que no se acumulen, pero con clones no es necesario
+        }
+
+        track.style.transform = `translateX(${position}px)`;
+        requestId = requestAnimationFrame(move);
+    }
+
+    // Iniciar animación
+    move();
+
+    // Pausar al pasar el mouse (opcional)
+    track.addEventListener('mouseenter', () => {
+        cancelAnimationFrame(requestId);
+    });
+    track.addEventListener('mouseleave', () => {
+        requestId = requestAnimationFrame(move);
+    });
+})();
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
