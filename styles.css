@@ -3432,3 +3432,89 @@ body {
         }
     }
 }
+/* ===== CARRUSEL DE PACIENTES ===== */
+.carrusel-pacientes-section {
+    background: rgba(250, 242, 255, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 70px;
+    padding: 3rem;
+    margin: 4rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.carrusel-subtitulo {
+    text-align: center;
+    color: #6b5e8a;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+    font-weight: 500;
+}
+
+.carrusel-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: 0 20px 30px -10px rgba(140, 120, 160, 0.4);
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 1rem;
+    animation: desplazar 20s linear infinite; /* Ajusta la duración según prefieras */
+    width: max-content;
+}
+
+.carrusel-track img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 3px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.carrusel-track img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(120, 100, 140, 0.3);
+}
+
+/* Animación para sentido antihorario (desplazamiento hacia la izquierda) */
+@keyframes desplazar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Se desplaza la mitad del ancho total */
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .carrusel-pacientes-section {
+        padding: 2rem 1.5rem;
+        border-radius: 50px;
+    }
+    
+    .carrusel-subtitulo {
+        font-size: 1.1rem;
+    }
+    
+    .carrusel-track img {
+        width: 220px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carrusel-pacientes-section {
+        padding: 1.5rem 1rem;
+        border-radius: 40px;
+    }
+    
+    .carrusel-track img {
+        width: 180px;
+        height: 120px;
+    }
+}
