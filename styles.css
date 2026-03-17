@@ -1423,7 +1423,7 @@ body {
     height: 100vh;
     background: rgb(251, 251, 251);
     z-index: 9999;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -1842,6 +1842,65 @@ body {
     .parallax-overlay {
         background-attachment: scroll;
         transform: none !important;
+    }
+
+    /* ===== CONVERTIR GRIDS EN CARRUSELES HORIZONTALES ===== */
+   .convenios-grid,
+.cards,
+.when-grid,
+.proceso-grid,
+.testimonial-grid,
+.eventos-grid,
+.resenas-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    scroll-padding-left: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+    /* Ocultar scrollbar (opcional) */
+    .convenios-grid::-webkit-scrollbar,
+    .cards::-webkit-scrollbar,
+    .when-grid::-webkit-scrollbar,
+    .proceso-grid::-webkit-scrollbar,
+    .testimonial-grid::-webkit-scrollbar,
+    .eventos-grid::-webkit-scrollbar,
+    .resenas-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Anchos fijos para los items */
+    .convenios-grid .convenio-card {
+        flex: 0 0 200px;
+        scroll-snap-align: start;
+    }
+    .cards .card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+    .when-grid .when-item {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+    .proceso-grid .proceso-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+    .testimonial-grid .testimonial-item {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+    .eventos-grid .evento-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+    .resenas-grid .resena-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
     }
 }
 
@@ -3154,215 +3213,39 @@ body {
     }
 }
 /* ===== VERSIÓN MÓVIL (hasta 768px) ===== */
+/* ===== VERSIÓN MÓVIL (hasta 768px) ===== */
 @media screen and (max-width: 768px) {
     /* -----------------------------------------------
        1. FONDO DIFERENTE PARA MÓVIL (desactivar parallax)
     ----------------------------------------------- */
     .parallax-bg {
-        background-image: url('Imagen3.png'); /* Cambia por tu imagen o usa color sólido */
-        background-attachment: scroll;       /* Sin parallax */
+        background-image: url('Imagen3.png');
+        background-attachment: scroll;
         background-size: cover;
         background-position: center;
-        transform: none !important;          /* Elimina el efecto de scroll */
+        transform: none !important;
     }
     .parallax-overlay {
-        display: none;                       /* Oculta la capa de color si no la quieres en móvil */
+        display: none;
     }
 
     /* -----------------------------------------------
-       2. Ajustes generales de texto y contenedores
+       2. Ajustes generales
     ----------------------------------------------- */
     body {
-        font-size: 16px;                     /* Tamaño base fijo, evita escalados extraños */
+        font-size: 16px;
         overflow-x: hidden;
     }
 
     .container {
         width: 100%;
-        padding: 1rem 1.2rem;                 /* Padding lateral adecuado */
+        padding: 1rem 1.2rem;
         margin: 0 auto;
         box-sizing: border-box;
     }
 
     /* -----------------------------------------------
-       3. Sección "¿Cuándo llevar a mi hijo/a al psicólogo?" (when-to-go)
-          - Aquí se concentraba el problema principal
-    ----------------------------------------------- */
-    .when-to-go {
-        padding: 2rem 1.2rem;                 /* Reduce el padding general */
-        border-radius: 40px;
-        margin: 2rem 0;
-    }
-
-    .when-grid {
-        grid-template-columns: 1fr;            /* Una columna */
-        gap: 1.2rem;
-        margin: 1rem 0;
-    }
-
-    .when-item {
-        padding: 1.2rem;                       /* Padding interior cómodo */
-        border-radius: 30px;
-        box-sizing: border-box;
-        width: 100%;
-    }
-
-    .when-item h3 {
-        font-size: 1.4rem;                     /* Título más pequeño pero legible */
-        word-break: break-word;                 /* Permite dividir palabras largas */
-        hyphens: auto;                          /* (opcional) divide con guiones si es necesario */
-        line-height: 1.3;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-    }
-
-    .when-item ul {
-        padding-left: 0;
-        margin: 0;
-    }
-
-    .when-item ul li {
-        font-size: 0.95rem;                     /* Tamaño de lectura cómodo */
-        padding-left: 1.5rem;                    /* Espacio para el bullet */
-        margin-bottom: 0.7rem;
-        word-break: break-word;
-        line-height: 1.4;
-        box-sizing: border-box;
-    }
-
-    .when-item ul li::before {
-        font-size: 1.4rem;                       /* Bullet más pequeño pero visible */
-        top: -0.2rem;
-    }
-
-    /* -----------------------------------------------
-       4. Otras secciones propensas a desbordamiento
-    ----------------------------------------------- */
-    /* Cards de servicios */
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
-        margin: 2rem 0;
-    }
-
-    .card {
-        padding: 1.5rem;
-        border-radius: 30px;
-    }
-
-    .card h3 {
-        font-size: 1.5rem;
-        word-break: break-word;
-    }
-
-    .card p {
-        font-size: 0.95rem;
-    }
-
-    /* Sección de profesionales */
-    .about-section {
-        padding: 2rem 1.2rem;
-        border-radius: 40px;
-    }
-
-    .about-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .about-content h2 {
-        font-size: 2rem;
-        word-break: break-word;
-    }
-
-    .about-description {
-        font-size: 1rem;
-        padding: 1rem;
-    }
-
-    .credenciales {
-        gap: 0.5rem;
-        justify-content: center;
-    }
-
-    .credencial {
-        font-size: 0.85rem;
-        padding: 0.4rem 1rem;
-    }
-
-    /* Sección de mitos y verdades */
-    .testimonials {
-        padding: 2rem 1.2rem;
-        border-radius: 40px;
-    }
-
-    .testimonial-item p {
-        font-size: 1rem;
-    }
-
-    /* Sección de eventos */
-    .eventos-section {
-        padding: 2rem 1.2rem;
-        border-radius: 40px;
-    }
-
-    .evento-info h3 {
-        font-size: 1.2rem;
-        word-break: break-word;
-    }
-
-    /* Sección de reseñas */
-    .resenas-section {
-        padding: 2rem 1.2rem;
-        border-radius: 40px;
-    }
-
-    .resena-texto {
-        font-size: 0.95rem;
-    }
-
-    /* Sección FAQ */
-    .faq-section {
-        padding: 2rem 1.2rem;
-        border-radius: 40px;
-    }
-
-    .faq-pregunta {
-        font-size: 1rem;
-        padding: 1rem 1.2rem;
-    }
-
-    .faq-respuesta p {
-        font-size: 0.9rem;
-    }
-
-    /* Footer (ajustes para que no desborde) */
-    .footer-grid-5 {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    .footer-col {
-        width: 100%;
-        max-width: 350px;
-        padding: 1rem;
-        box-sizing: border-box;
-    }
-
-    .footer-col h4 {
-        font-size: 1.1rem;
-        word-break: break-word;
-    }
-
-    .footer-enlaces a,
-    .footer-contacto a {
-        font-size: 0.9rem;
-        word-break: break-word;
-    }
-
-    /* -----------------------------------------------
-       5. Ajustes de navbar y botones (ya los tenías bien)
+       3. Navbar y botones
     ----------------------------------------------- */
     .navbar {
         width: 98%;
@@ -3414,14 +3297,189 @@ body {
     }
 
     /* -----------------------------------------------
-       6. Ajustes para pantallas muy pequeñas (≤480px)
+       4. Hero
+    ----------------------------------------------- */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.2rem;
+        gap: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
+    .hero-image svg {
+        width: 50%;
+        max-width: 180px;
+    }
+
+    /* -----------------------------------------------
+       5. Títulos de sección
+    ----------------------------------------------- */
+    .section-title {
+        font-size: 2rem;
+        margin: 2.5rem 0 1.5rem;
+    }
+
+    /* -----------------------------------------------
+       6. Secciones que se convierten en carrusel
+          (se fuerza flex y se elimina cualquier grid)
+    ----------------------------------------------- */
+    .convenios-grid,
+    .cards,
+    .when-grid,
+    .proceso-grid,
+    .testimonial-grid,
+    .eventos-grid,
+    .resenas-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        scroll-padding-left: 1rem !important;
+        grid-template-columns: none !important;
+        margin: 1rem 0 !important;
+    }
+
+    /* Ocultar scrollbar (opcional) */
+    .convenios-grid::-webkit-scrollbar,
+    .cards::-webkit-scrollbar,
+    .when-grid::-webkit-scrollbar,
+    .proceso-grid::-webkit-scrollbar,
+    .testimonial-grid::-webkit-scrollbar,
+    .eventos-grid::-webkit-scrollbar,
+    .resenas-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* Anchos fijos para los items */
+    .convenios-grid .convenio-card {
+        flex: 0 0 200px !important;
+        scroll-snap-align: start !important;
+    }
+    .cards .card {
+        flex: 0 0 280px !important;
+        scroll-snap-align: start !important;
+    }
+    .when-grid .when-item {
+        flex: 0 0 280px !important;
+        scroll-snap-align: start !important;
+    }
+    .proceso-grid .proceso-card {
+        flex: 0 0 280px !important;
+        scroll-snap-align: start !important;
+    }
+    .testimonial-grid .testimonial-item {
+        flex: 0 0 280px !important;
+        scroll-snap-align: start !important;
+    }
+    .eventos-grid .evento-card {
+        flex: 0 0 280px !important;
+        scroll-snap-align: start !important;
+    }
+    .resenas-grid .resena-card {
+        flex: 0 0 280px !important;
+        scroll-snap-align: start !important;
+    }
+
+    /* -----------------------------------------------
+       7. Ajustes específicos de cada sección (padding, etc.)
+          (sin modificar el display)
+    ----------------------------------------------- */
+    .when-to-go,
+    .about-section,
+    .testimonials,
+    .eventos-section,
+    .resenas-section,
+    .faq-section,
+    .proceso-section,
+    .convenios-section {
+        padding: 2rem 1.2rem;
+        border-radius: 40px;
+        margin: 2rem 0;
+    }
+
+    .when-item,
+    .card,
+    .proceso-card,
+    .testimonial-item,
+    .evento-card,
+    .resena-card {
+        padding: 1.5rem;
+        border-radius: 30px;
+    }
+
+    .when-item h3,
+    .card h3,
+    .proceso-card h3,
+    .evento-info h3 {
+        font-size: 1.3rem;
+        word-break: break-word;
+        margin-bottom: 1rem;
+    }
+
+    .when-item ul li,
+    .card p,
+    .proceso-descripcion,
+    .testimonial-item p,
+    .resena-texto {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .credenciales {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    .credencial {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .footer-grid-5 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .footer-col {
+        width: 100%;
+        max-width: 350px;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .footer-col h4 {
+        font-size: 1.1rem;
+        word-break: break-word;
+    }
+    .footer-enlaces a,
+    .footer-contacto a {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    /* -----------------------------------------------
+       8. Ajustes para pantallas muy pequeñas (≤480px)
     ----------------------------------------------- */
     @media screen and (max-width: 480px) {
-        .when-item h3 {
-            font-size: 1.3rem;
-        }
-        .card h3 {
-            font-size: 1.3rem;
+        .when-item h3,
+        .card h3,
+        .proceso-card h3 {
+            font-size: 1.2rem;
         }
         .about-content h2 {
             font-size: 1.8rem;
@@ -3429,6 +3487,17 @@ body {
         .credencial {
             font-size: 0.8rem;
             padding: 0.3rem 0.8rem;
+        }
+        .convenios-grid .convenio-card {
+            flex: 0 0 160px !important;
+        }
+        .cards .card,
+        .when-grid .when-item,
+        .proceso-grid .proceso-card,
+        .testimonial-grid .testimonial-item,
+        .eventos-grid .evento-card,
+        .resenas-grid .resena-card {
+            flex: 0 0 240px !important;
         }
     }
 }
@@ -3461,7 +3530,7 @@ body {
 .carrusel-track {
     display: flex;
     gap: 1rem;
-    animation: desplazar 20s linear infinite; /* Ajusta la duración según prefieras */
+    animation: desplazar 20s linear infinite;
     width: max-content;
 }
 
@@ -3480,17 +3549,17 @@ body {
     box-shadow: 0 15px 30px rgba(120, 100, 140, 0.3);
 }
 
-/* Animación para sentido antihorario (desplazamiento hacia la izquierda) */
+/* Animación para desplazamiento continuo hacia la izquierda */
 @keyframes desplazar {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Se desplaza la mitad del ancho total */
+        transform: translateX(-50%);
     }
 }
 
-/* Responsive */
+/* Responsive para móviles */
 @media screen and (max-width: 768px) {
     .carrusel-pacientes-section {
         padding: 2rem 1.5rem;
