@@ -11,12 +11,7 @@
 <body>
     <!-- PANTALLA DE CARGA CON LOGO GIRATORIO -->
     
-    <div id="pantalla-carga" class="pantalla-carga">
-        <div class="logo-carga-circulo">
-            <img src="lili.png" alt="Logo Liliput" class="logo-giratorio">
-        </div>
-        <div class="texto-carga">Cargando....</div>
-    </div>
+
 
     <!-- PANTALLA DE BIENVENIDA CON VIDEO -->
     <div id="splash-screen" class="splash-screen-video">
@@ -66,7 +61,7 @@
         <section id="inicio">
         <main class="container">
             <!-- Hero section -->
-            <section class="hero" id="inicio">
+            <section class="hero" id="inicio" >
                 <div class="hero-content">
                     <h1>A VECES LO MÁS VALIENTE QUE PUEDES HACER ES PEDIR AYUDA</h1>
                     <p> ACOMPAÑAMIENTO PSICOLÓGICO PROFESIONAL CON UN ENFOQUE CÁLIDO, HUMANO Y BASADO EN LA EVIDENCIA.</p>
@@ -667,7 +662,7 @@
     </div>
 </section>
           <!-- Footer -->
-<footer class="footer">
+<footer class="footer" id="contacto">
     <div class="footer-content">
         <!-- Grid de 5 columnas -->
         <div class="footer-grid-5">
@@ -883,28 +878,22 @@
     </div>
 </div>
 
-
-
+ <!-- ===== SCRIPTS ===== -->
     <script>
-        // Elementos
-        const pantallaCarga = document.getElementById('pantalla-carga');
-        const splashScreen = document.getElementById('splash-screen');
-        const video = document.getElementById('video-bienvenida');
-        const mainContent = document.getElementById('mainContent');
-        const burbuja1 = document.getElementById('burbuja1');
-        const burbuja2 = document.getElementById('burbuja2');
+        // ===== SCRIPT PRINCIPAL: VIDEO Y PARALLAX =====
+        (function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const video = document.getElementById('video-bienvenida');
+            const mainContent = document.getElementById('mainContent');
+            const burbuja1 = document.getElementById('burbuja1');
+            const burbuja2 = document.getElementById('burbuja2');
 
-        // Ocultar scroll mientras carga
-        document.body.style.overflow = 'hidden';
-
-        // Mostrar carga por 2 segundos
-        setTimeout(() => {
-            pantallaCarga.style.transition = 'opacity 0.8s ease';
-            pantallaCarga.style.opacity = '0';
-            
-            setTimeout(() => {
-                pantallaCarga.style.display = 'none';
-                splashScreen.style.display = 'flex';
+            // Mostrar splash screen y reproducir video inmediatamente
+            window.addEventListener('load', function() {
+                if (splashScreen) {
+                    splashScreen.style.display = 'flex';
+                    splashScreen.style.opacity = '1';
+                }
                 
                 // Mostrar primera burbuja
                 if (burbuja1) {
@@ -924,210 +913,141 @@
                     }
                 }, 2500);
                 
-                video.play().catch(e => console.log(e));
-                splashScreen.style.animation = 'aparecer 1s ease';
-            }, 800);
-        }, 2000);
-
-        // Cuando termina el video (se mantiene igual)
-        video.addEventListener('ended', function() {
-            splashScreen.style.transition = 'opacity 1.2s ease';
-            splashScreen.style.opacity = '0';
-            setTimeout(() => {
-                splashScreen.style.display = 'none';
-                mainContent.style.display = 'block';
-                document.body.style.overflow = 'auto';
-                mainContent.style.animation = 'aparecer 1.5s ease';
+                // Intentar reproducir el video
+                if (video) {
+                    video.play().catch(e => console.log('Error al reproducir video:', e));
+                }
                 
-                // Inicializar parallax
-                window.dispatchEvent(new Event('scroll'));
-            }, 1200);
-        });
-
-        // Tiempo de seguridad
-        setTimeout(function() {
-            if (splashScreen.style.display === 'flex' && splashScreen.style.opacity !== '0') {
-                splashScreen.style.transition = 'opacity 1.2s ease';
-                splashScreen.style.opacity = '0';
-                setTimeout(() => {
-                    splashScreen.style.display = 'none';
-                    mainContent.style.display = 'block';
-                    document.body.style.overflow = 'auto';
-                }, 1200);
-            }
-        }, 10000);
-
-        // Para móviles
-        document.addEventListener('touchstart', function() {
-            if (video.paused && splashScreen.style.display === 'flex') {
-                video.play();
-            }
-        }, { once: true });
-
-        // Efecto parallax (se mantiene)
-        window.addEventListener('scroll', function() {
-            const parallaxBg = document.getElementById('parallaxBg');
-            const parallaxOverlay = document.getElementById('parallaxOverlay');
-            
-            if (parallaxBg && parallaxOverlay) {
-                const scrollPosition = window.pageYOffset;
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                const maxScroll = documentHeight - windowHeight;
-                const scrollPercentage = maxScroll > 0 ? scrollPosition / maxScroll : 0;
-                
-                const minTranslate = -150;
-                const maxTranslate = 0;
-                const speed = 0.8;
-                let translateY = maxTranslate - (scrollPercentage * Math.abs(minTranslate) * speed);
-                translateY = Math.max(minTranslate, Math.min(maxTranslate, translateY));
-                
-                parallaxBg.style.transform = `translateY(${translateY}px)`;
-                parallaxOverlay.style.transform = `translateY(${translateY}px)`;
-            }
-        });
-
-        // ===== FORMULARIO MODAL (se mantiene) =====
-        const modal = document.getElementById('modal-contacto');
-        const btnAbrir = document.getElementById('abrir-modal');
-        const btnCerrar = document.querySelector('.cerrar-modal');
-
-        btnAbrir.onclick = function() {
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        btnCerrar.onclick = function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // ===== FAQ ACORDEÓN (se mantiene) =====
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            const pregunta = item.querySelector('.faq-pregunta');
-            
-            pregunta.addEventListener('click', () => {
-                item.classList.toggle('activo');
-                
-                const icono = item.querySelector('.faq-icono');
-                if (item.classList.contains('activo')) {
-                    icono.textContent = '✕';
-                } else {
-                    icono.textContent = '➕';
+                // Animación de entrada
+                if (splashScreen) {
+                    splashScreen.style.animation = 'aparecer 1s ease';
                 }
             });
-        });
-    </script>
 
-    <!-- Script para el botón de sonido del video vertical (se mantiene) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.querySelector('.footer-video-vertical');
-            const soundBtn = document.getElementById('unmute-btn');
-            
-            if (video && soundBtn) {
-                soundBtn.addEventListener('click', function() {
-                    if (video.muted) {
-                        video.muted = false;
-                        soundBtn.textContent = '🔊 Silenciar';
-                        soundBtn.style.background = 'rgba(255, 255, 255, 0.4)';
-                    } else {
-                        video.muted = true;
-                        soundBtn.textContent = '🔇 Activar sonido';
-                        soundBtn.style.background = 'rgba(0, 0, 0, 0.5)';
+            // Cuando termina el video
+            if (video) {
+                video.addEventListener('ended', function() {
+                    if (splashScreen) {
+                        splashScreen.style.transition = 'opacity 1.2s ease';
+                        splashScreen.style.opacity = '0';
                     }
+                    setTimeout(() => {
+                        if (splashScreen) splashScreen.style.display = 'none';
+                        if (mainContent) {
+                            mainContent.style.display = 'block';
+                            document.body.style.overflow = 'auto';
+                            mainContent.style.animation = 'aparecer 1.5s ease';
+                        }
+                        // Inicializar parallax
+                        window.dispatchEvent(new Event('scroll'));
+                    }, 1200);
                 });
             }
-        });
+
+            // Tiempo de seguridad por si el video falla
+            setTimeout(function() {
+                if (splashScreen && splashScreen.style.display === 'flex' && splashScreen.style.opacity !== '0') {
+                    splashScreen.style.transition = 'opacity 1.2s ease';
+                    splashScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        splashScreen.style.display = 'none';
+                        if (mainContent) {
+                            mainContent.style.display = 'block';
+                            document.body.style.overflow = 'auto';
+                        }
+                    }, 1200);
+                }
+            }, 10000);
+
+            // Para móviles: intentar reproducir al tocar la pantalla
+            document.addEventListener('touchstart', function() {
+                if (video && video.paused && splashScreen && splashScreen.style.display === 'flex') {
+                    video.play();
+                }
+            }, { once: true });
+
+            // Efecto parallax
+            window.addEventListener('scroll', function() {
+                const parallaxBg = document.getElementById('parallaxBg');
+                const parallaxOverlay = document.getElementById('parallaxOverlay');
+                
+                if (parallaxBg && parallaxOverlay) {
+                    const scrollPosition = window.pageYOffset;
+                    const windowHeight = window.innerHeight;
+                    const documentHeight = document.documentElement.scrollHeight;
+                    const maxScroll = documentHeight - windowHeight;
+                    const scrollPercentage = maxScroll > 0 ? scrollPosition / maxScroll : 0;
+                    
+                    const minTranslate = -150;
+                    const maxTranslate = 0;
+                    const speed = 0.8;
+                    let translateY = maxTranslate - (scrollPercentage * Math.abs(minTranslate) * speed);
+                    translateY = Math.max(minTranslate, Math.min(maxTranslate, translateY));
+                    
+                    parallaxBg.style.transform = `translateY(${translateY}px)`;
+                    parallaxOverlay.style.transform = `translateY(${translateY}px)`;
+                }
+            });
+        })();
     </script>
 
-    <!-- Scripts para modales de cards y consejos (se mantienen) -->
     <script>
-        // ===== MODALES DE LAS CARDS =====
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card');
-            const modalMap = {
-                'TOLERANCIA A LA FRUSTRACIÓN': 'modal-frustracion',
-                'CONTROL DE IMPULSOS': 'modal-impulsos',
-                'ATENCIÓN, CONCENTRACIÓN Y MEMORIA': 'modal-atencion',
-                'CONTROL DE IRA': 'modal-ira',
-                'SOCIALIZACIÓN': 'modal-socializacion',
-                'AUTOESTIMA': 'modal-autoestima',
-                'ORIENTACIÓN VOCACIONAL': 'modal-vocacional',
-                'ANSIEDAD': 'modal-ansiedad',
-                'ESTRÉS': 'modal-estres'
-            };
-            
-            cards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const titulo = this.querySelector('h3').textContent.trim();
-                    const modalId = modalMap[titulo];
-                    if (modalId) {
-                        const modal = document.getElementById(modalId);
-                        if (modal) {
-                            modal.style.display = 'block';
-                            document.body.style.overflow = 'hidden';
-                        }
+        // ===== MODAL DE CONTACTO =====
+        (function() {
+            const modal = document.getElementById('modal-contacto');
+            const btnAbrir = document.getElementById('abrir-modal');
+            const btnCerrar = document.querySelector('.cerrar-modal');
+
+            if (btnAbrir && modal && btnCerrar) {
+                btnAbrir.onclick = function() {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+
+                btnCerrar.onclick = function() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
                     }
-                });
-            });
-            
-            document.querySelectorAll('.cerrar-card-modal').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const modal = this.closest('.card-modal');
-                    if (modal) {
+                }
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.style.display === 'block') {
                         modal.style.display = 'none';
                         document.body.style.overflow = 'auto';
                     }
                 });
-            });
-            
-            window.addEventListener('click', function(e) {
-                if (e.target.classList.contains('card-modal')) {
-                    e.target.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    document.querySelectorAll('.card-modal').forEach(modal => {
-                        if (modal.style.display === 'block') {
-                            modal.style.display = 'none';
-                            document.body.style.overflow = 'auto';
+            }
+        })();
+    </script>
+
+    <script>
+        // ===== FAQ ACORDEÓN =====
+        (function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const pregunta = item.querySelector('.faq-pregunta');
+                if (pregunta) {
+                    pregunta.addEventListener('click', () => {
+                        item.classList.toggle('activo');
+                        const icono = item.querySelector('.faq-icono');
+                        if (icono) {
+                            icono.textContent = item.classList.contains('activo') ? '✕' : '➕';
                         }
                     });
                 }
             });
-        });
-
-        function cerrarTodosModales() {
-            document.querySelectorAll('.card-modal').forEach(modal => {
-                modal.style.display = 'none';
-            });
-        }
+        })();
     </script>
 
     <script>
         // ===== MODALES DE CONSEJOS =====
-        document.addEventListener('DOMContentLoaded', function() {
+        (function() {
             const whenItems = document.querySelectorAll('.when-item');
             const consejoMap = {
                 'Cambios en intereses y rutina': 'consejo-cambios',
@@ -1141,7 +1061,8 @@
             whenItems.forEach(item => {
                 item.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    const titulo = this.querySelector('h3').textContent.trim();
+                    const titulo = this.querySelector('h3')?.textContent.trim();
+                    if (!titulo) return;
                     const modalId = consejoMap[titulo];
                     if (modalId) {
                         const modal = document.getElementById(modalId);
@@ -1169,17 +1090,11 @@
                     document.body.style.overflow = 'auto';
                 }
             });
-        });
-
-        function cerrarTodosConsejos() {
-            document.querySelectorAll('.consejo-modal').forEach(modal => {
-                modal.style.display = 'none';
-            });
-        }
+        })();
     </script>
 
-    <!-- Script para dropdown multiselect (se mantiene) -->
     <script>
+        // ===== DROPDOWN MULTISELECT =====
         (function() {
             const dropdownBtn = document.getElementById('dropdownMotivoBtn');
             const dropdownOpciones = document.getElementById('dropdownMotivoOpciones');
@@ -1209,12 +1124,7 @@
                     }
                 });
 
-                if (seleccionadosText.length > 0) {
-                    dropdownBtn.innerText = seleccionadosText.join(', ');
-                } else {
-                    dropdownBtn.innerText = 'Selecciona una o más opciones';
-                }
-
+                dropdownBtn.innerText = seleccionadosText.length > 0 ? seleccionadosText.join(', ') : 'Selecciona una o más opciones';
                 hiddenInput.value = seleccionadosValues.join(',');
             }
 
@@ -1224,9 +1134,7 @@
                 }
             });
 
-            dropdownOpciones.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
+            dropdownOpciones.addEventListener('click', (e) => e.stopPropagation());
 
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && dropdownOpciones.classList.contains('mostrar')) {
@@ -1234,88 +1142,91 @@
                 }
             });
         })();
-        // Menú hamburguesa
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
+    </script>
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Animación del icono (opcional)
-        hamburger.classList.toggle('active');
-    });
-}
+    <script>
+        // ===== MENÚ HAMBURGUESA =====
+        (function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
 
-// Cerrar menú al hacer clic en un enlace (opcional)
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
-// Pausar carrusel al pasar el mouse
-const track = document.querySelector('.carrusel-track');
-if (track) {
-    track.addEventListener('mouseenter', () => {
-        track.style.animationPlayState = 'paused';
-    });
-    track.addEventListener('mouseleave', () => {
-        track.style.animationPlayState = 'running';
-    });
-}
-// ===== CARRUSEL INFINITO LENTO =====
-(function() {
-    const track = document.getElementById('carruselTrack');
-    if (!track) return;
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
 
-    // Obtener las imágenes originales
-    const images = Array.from(track.children);
-    if (images.length === 0) return;
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+        })();
+    </script>
 
-    // Clonar todas las imágenes para crear el efecto infinito
-    images.forEach(img => {
-        const clone = img.cloneNode(true);
-        track.appendChild(clone);
-    });
+    <script>
+        // ===== CARRUSEL INFINITO (lento) =====
+        (function() {
+            const track = document.querySelector('.carrusel-track');
+            if (!track) return;
 
-    let position = 0;
-    // Velocidad: píxeles por frame (valor más pequeño = más lento)
-    // 0.2 es bastante lento, puedes probar 0.3, 0.5, etc.
-    const speed = 0.1; // <--- AJUSTA ESTE VALOR
+            const images = Array.from(track.children);
+            if (images.length === 0) return;
 
-    // Calcular el ancho de una imagen (asumimos que todas tienen el mismo ancho)
-    // y el gap (1rem = 16px)
-    const gap = 16; // en píxeles, igual que en CSS
-    const imageWidth = images[0].offsetWidth + gap;
-    const totalWidth = imageWidth * images.length; // ancho del conjunto original
+            // Clonar imágenes para efecto infinito
+            images.forEach(img => {
+                const clone = img.cloneNode(true);
+                track.appendChild(clone);
+            });
 
-    let requestId;
+            let position = 0;
+            const speed = 0.1; // píxeles por frame (ajustable)
+            const gap = 16; // gap en píxeles (igual que en CSS)
+            const imageWidth = images[0].offsetWidth + gap;
+            const totalWidth = imageWidth * images.length; // ancho del conjunto original
 
-    function move() {
-        position -= speed; // movimiento hacia la izquierda
+            let requestId;
 
-        // Si nos hemos desplazado más del ancho original, reiniciamos posición
-        // y movemos el primer grupo al final (esto se hace automáticamente con los clones)
-        if (Math.abs(position) >= totalWidth) {
-            position = 0;
-            // Opcional: reordenar los nodos para que no se acumulen, pero con clones no es necesario
-        }
+            function move() {
+                position -= speed;
+                if (Math.abs(position) >= totalWidth) {
+                    position = 0;
+                }
+                track.style.transform = `translateX(${position}px)`;
+                requestId = requestAnimationFrame(move);
+            }
 
-        track.style.transform = `translateX(${position}px)`;
-        requestId = requestAnimationFrame(move);
-    }
+            move();
 
-    // Iniciar animación
-    move();
+            track.addEventListener('mouseenter', () => cancelAnimationFrame(requestId));
+            track.addEventListener('mouseleave', () => {
+                requestId = requestAnimationFrame(move);
+            });
+        })();
+    </script>
 
-    // Pausar al pasar el mouse (opcional)
-    track.addEventListener('mouseenter', () => {
-        cancelAnimationFrame(requestId);
-    });
-    track.addEventListener('mouseleave', () => {
-        requestId = requestAnimationFrame(move);
-    });
-})();
+    <script>
+        // ===== BOTÓN DE SONIDO PARA VIDEO VERTICAL =====
+        (function() {
+            const video = document.querySelector('.footer-video-vertical');
+            const soundBtn = document.getElementById('unmute-btn');
+            
+            if (video && soundBtn) {
+                soundBtn.addEventListener('click', function() {
+                    if (video.muted) {
+                        video.muted = false;
+                        soundBtn.textContent = '🔊 Silenciar';
+                        soundBtn.style.background = 'rgba(255, 255, 255, 0.4)';
+                    } else {
+                        video.muted = true;
+                        soundBtn.textContent = '🔇 Activar sonido';
+                        soundBtn.style.background = 'rgba(0, 0, 0, 0.5)';
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 </html>
